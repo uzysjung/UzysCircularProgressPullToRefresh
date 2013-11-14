@@ -8,7 +8,7 @@
 
 #import "uzysRootViewController.h"
 #import "UzysRadialProgressActivityIndicator.h"
-#import "UIScrollView+UzysInteractiveIndicator.h"
+#import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 @interface uzysRootViewController ()
 @property (nonatomic,strong) UzysRadialProgressActivityIndicator *radialIndicator;
 @property (nonatomic,strong) UIScrollView *scrollView;

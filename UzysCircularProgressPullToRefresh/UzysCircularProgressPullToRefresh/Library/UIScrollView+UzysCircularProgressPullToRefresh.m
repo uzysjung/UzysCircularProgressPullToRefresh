@@ -6,7 +6,7 @@
 //  Copyright (c) 2013년 Uzysjung. All rights reserved.
 //
 
-#import "UIScrollView+UzysInteractiveIndicator.h"
+#import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 #import <objc/runtime.h>
 static char UIScrollViewPullToRefreshView;
 

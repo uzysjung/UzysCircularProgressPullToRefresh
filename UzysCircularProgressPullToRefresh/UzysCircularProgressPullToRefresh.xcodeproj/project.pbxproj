@@ -19,6 +19,10 @@
 		951CC07A1834AB49008B47FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CC0621834AB49008B47FA /* UIKit.framework */; };
 		951CC0821834AB49008B47FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951CC0801834AB49008B47FA /* InfoPlist.strings */; };
 		951CC0841834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CC0831834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m */; };
+		957BAAB71834C8EF009A8358 /* uzysRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAAB61834C8EF009A8358 /* uzysRootViewController.m */; };
+		957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 957BAAB91834C92F009A8358 /* centerIcon@2x.png */; };
+		957BAABF1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */; };
+		957BAAC01834C92F009A8358 /* UzysRadialProgressActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		951CC07F1834AB49008B47FA /* UzysCircularProgressPullToRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UzysCircularProgressPullToRefreshTests-Info.plist"; sourceTree = "<group>"; };
 		951CC0811834AB49008B47FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		951CC0831834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UzysCircularProgressPullToRefreshTests.m; sourceTree = "<group>"; };
+		957BAAB51834C8EF009A8358 /* uzysRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uzysRootViewController.h; sourceTree = "<group>"; };
+		957BAAB61834C8EF009A8358 /* uzysRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uzysRootViewController.m; sourceTree = "<group>"; };
+		957BAAB91834C92F009A8358 /* centerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "centerIcon@2x.png"; sourceTree = "<group>"; };
+		957BAABA1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UzysCircularProgressPullToRefresh.h"; sourceTree = "<group>"; };
+		957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UzysCircularProgressPullToRefresh.m"; sourceTree = "<group>"; };
+		957BAABC1834C92F009A8358 /* UzysRadialProgressActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysRadialProgressActivityIndicator.h; sourceTree = "<group>"; };
+		957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysRadialProgressActivityIndicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +118,11 @@
 		951CC0641834AB49008B47FA /* UzysCircularProgressPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				957BAAB81834C92F009A8358 /* Library */,
 				951CC06D1834AB49008B47FA /* uzysAppDelegate.h */,
 				951CC06E1834AB49008B47FA /* uzysAppDelegate.m */,
+				957BAAB51834C8EF009A8358 /* uzysRootViewController.h */,
+				957BAAB61834C8EF009A8358 /* uzysRootViewController.m */,
 				951CC0701834AB49008B47FA /* Images.xcassets */,
 				951CC0651834AB49008B47FA /* Supporting Files */,
 			);
@@ -142,6 +156,18 @@
 				951CC0801834AB49008B47FA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		957BAAB81834C92F009A8358 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				957BAAB91834C92F009A8358 /* centerIcon@2x.png */,
+				957BAABA1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.h */,
+				957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */,
+				957BAABC1834C92F009A8358 /* UzysRadialProgressActivityIndicator.h */,
+				957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +248,7 @@
 			files = (
 				951CC0691834AB49008B47FA /* InfoPlist.strings in Resources */,
 				951CC0711834AB49008B47FA /* Images.xcassets in Resources */,
+				957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957BAAC01834C92F009A8358 /* UzysRadialProgressActivityIndicator.m in Sources */,
+				957BAAB71834C8EF009A8358 /* uzysRootViewController.m in Sources */,
 				951CC06B1834AB49008B47FA /* main.m in Sources */,
 				951CC06F1834AB49008B47FA /* uzysAppDelegate.m in Sources */,
+				957BAABF1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +472,7 @@
 				951CC0891834AB49008B47FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		951CC08A1834AB49008B47FA /* Build configuration list for PBXNativeTarget "UzysCircularProgressPullToRefreshTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +481,7 @@
 				951CC08C1834AB49008B47FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
