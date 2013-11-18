@@ -99,6 +99,7 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER];
     
     NSDate *date = [self.pData objectAtIndex:indexPath.row];
+    cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
     cell.textLabel.textColor = [UIColor grayColor];
     cell.textLabel.text = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterMediumStyle];
     return cell;
