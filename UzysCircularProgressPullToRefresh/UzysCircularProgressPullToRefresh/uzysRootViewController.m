@@ -7,11 +7,9 @@
 //
 
 #import "uzysRootViewController.h"
-#import "UzysRadialProgressActivityIndicator.h"
 #import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 @interface uzysRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UzysRadialProgressActivityIndicator *radialIndicator;
-@property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *pData;
 @end
