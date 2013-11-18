@@ -164,23 +164,28 @@
     
     self.alpha = 1.0 * progress;
 
-    if (progress > 0) {
+    if (progress >= 0 && progress <=1.0) {
+        //rotation Animation
         CABasicAnimation *animationImage = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
         animationImage.fromValue = [NSNumber numberWithFloat:DEGREES_TO_RADIANS(180-180*prevProgress)];
         animationImage.toValue = [NSNumber numberWithFloat:DEGREES_TO_RADIANS(180-180*progress)];
         animationImage.duration = 0.15;
-        self.imageLayer.transform = CATransform3DMakeRotation(DEGREES_TO_RADIANS(180-180*progress), 0, 0, 1);
+        animationImage.removedOnCompletion = NO;
+        animationImage.fillMode = kCAFillModeForwards;
+//        [CATransaction setDisableActions:YES];
+//        self.imageLayer.transform = CATransform3DMakeRotation(DEGREES_TO_RADIANS(180-180*progress), 0, 0, 1);
+//        [CATransaction setDisableActions:NO];
         [self.imageLayer addAnimation:animationImage forKey:@"animation"];
+
+        //strokeAnimation
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        animation.fromValue = self.progress == 0 ? @0 : nil;
+        animation.fromValue = [NSNumber numberWithFloat:((CAShapeLayer *)self.shapeLayer.presentationLayer).strokeEnd];
         animation.toValue = [NSNumber numberWithFloat:progress];
-        animation.duration = 0.15;
-        self.shapeLayer.strokeEnd = progress;
+        animation.duration = 0.10 + 0.3*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
+        animation.removedOnCompletion = NO;
+        animation.fillMode = kCAFillModeForwards;
         [self.shapeLayer addAnimation:animation forKey:@"animation"];
         
-    } else {
-        self.shapeLayer.strokeEnd = 0.0f;
-        [self.shapeLayer removeAnimationForKey:@"animation"];
     }
     _progress = progress;
     prevProgress = progress;
