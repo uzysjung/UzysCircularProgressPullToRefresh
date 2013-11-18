@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 typedef void (^actionHandler)(void);
 typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
-    UZYSPullToRefreshStateStopped = 0,
+    UZYSPullToRefreshStateNone =0,
+    UZYSPullToRefreshStateStopped,
     UZYSPullToRefreshStateTriggering,
     UZYSPullToRefreshStateTriggered,
     UZYSPullToRefreshStateLoading,
-    UZYSPullToRefreshStateNone
+    
 };
 
 

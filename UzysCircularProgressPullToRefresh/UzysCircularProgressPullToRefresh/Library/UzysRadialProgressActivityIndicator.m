@@ -22,7 +22,6 @@
     self = [super init];
     if(self) {
         self.contentsScale = [UIScreen mainScreen].scale;
-//        self.opacity = 1.0;
         [self setNeedsDisplay];
     }
     return self;
@@ -73,7 +72,7 @@
 - (void)_commonInit
 {
     self.contentMode = UIViewContentModeRedraw;
-    self.state = UZYSPullToRefreshStateStopped;
+    self.state = UZYSPullToRefreshStateNone;
     
     //init actitvity indicator
     _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -181,7 +180,7 @@
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
         animation.fromValue = [NSNumber numberWithFloat:((CAShapeLayer *)self.shapeLayer.presentationLayer).strokeEnd];
         animation.toValue = [NSNumber numberWithFloat:progress];
-        animation.duration = 0.10 + 0.3*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
+        animation.duration = 0.15 + 0.35*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
         animation.removedOnCompletion = NO;
         animation.fillMode = kCAFillModeForwards;
         [self.shapeLayer addAnimation:animation forKey:@"animation"];
@@ -190,7 +189,18 @@
     _progress = progress;
     prevProgress = progress;
 }
-
+-(void)setLayerOpacity:(CGFloat)opacity
+{
+    self.imageLayer.opacity = opacity;
+    self.backgroundLayer.opacity = opacity;
+    self.shapeLayer.opacity = opacity;
+}
+-(void)setLayerHidden:(BOOL)hidden
+{
+    self.imageLayer.hidden = hidden;
+    self.shapeLayer.hidden = hidden;
+    self.backgroundLayer.hidden = hidden;
+}
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -212,7 +222,7 @@
 - (void)scrollViewDidScroll:(CGPoint)contentOffset
 {
     static double prevProgress;
-    NSLog(@"dragging %d",self.scrollView.dragging);
+//    NSLog(@"dragging %d",self.scrollView.dragging);
     CGFloat yOffset = contentOffset.y;
     self.progress = ((yOffset+ self.originalTopInset)/-PulltoRefreshThreshold);
     
@@ -220,7 +230,7 @@
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
 //            NSLog(@"StateStop");
-            [self actionStopState];
+//            [self actionStopState];
             break;
         case UZYSPullToRefreshStateNone: //detect action
         {
@@ -238,7 +248,7 @@
         }
             break;
         case UZYSPullToRefreshStateTriggered: //fire actionhandler
-            NSLog(@"StateTrigered %f dragging %d",prevProgress,self.scrollView.dragging);
+//            NSLog(@"StateTrigered %f dragging %d",prevProgress,self.scrollView.dragging);
             if(self.scrollView.dragging == NO && prevProgress > 0.99)
             {
                 [self actionTriggeredState];
@@ -258,45 +268,36 @@
     self.state = UZYSPullToRefreshStateNone;
     [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.activityIndicatorView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-        
     } completion:^(BOOL finished) {
         self.activityIndicatorView.transform = CGAffineTransformIdentity;
         [self.activityIndicatorView stopAnimating];
-    }];
-    
-    [self resetScrollViewContentInset:^{
-        self.imageLayer.hidden = NO;
-        self.shapeLayer.hidden = NO;
-        self.backgroundLayer.hidden = NO;
-        self.imageLayer.opacity = 1;
-        self.backgroundLayer.opacity = 1;
-        self.shapeLayer.opacity = 1;
-    }];
+        
+        [self.scrollView setContentOffset:CGPointMake(0, -(self.originalTopInset + self.bounds.size.height + 20.0)) animated:YES];
 
+        [self resetScrollViewContentInset:^{
+            [self setLayerHidden:NO];
+            [self setLayerOpacity:1.0];
+            NSLog(@"contentInset %f",self.scrollView.contentInset.top);
+        }];
+
+    }];
 }
 -(void)actionTriggeredState
 {
-    NSLog(@"call triggered state");
+//    NSLog(@"call triggered state");
     self.state = UZYSPullToRefreshStateLoading;
-
-    [self.shapeLayer removeAnimationForKey:@"animation"];
-
+    
     [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.imageLayer.opacity = 0;
-        self.backgroundLayer.opacity = 0;
-        self.shapeLayer.opacity = 0;
-        
+        [self setLayerOpacity:0.0];
     } completion:^(BOOL finished) {
-        self.imageLayer.hidden = YES;
-        self.shapeLayer.hidden = YES;
-        self.backgroundLayer.hidden = YES;
+        [self setLayerHidden:YES];
     }];
 
     [self.activityIndicatorView startAnimating];
-
     [self setupScrollViewContentInsetForLoadingIndicator:nil];
     if(self.pullToRefreshHandler)
         self.pullToRefreshHandler();
+    
 }
 
 #pragma mark - public method
@@ -306,7 +307,18 @@
 }
 - (void)manuallyTriggered
 {
-    [self actionTriggeredState];
+    [self setLayerOpacity:0.0];
+
+    UIEdgeInsets currentInsets = self.scrollView.contentInset;
+    currentInsets.top = self.originalTopInset + self.bounds.size.height + 20.0;
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -currentInsets.top);
+    } completion:^(BOOL finished) {
+        [self actionTriggeredState];
+    }];
+//    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -currentInsets.top) animated:YES];
+
 }
+
 
 @end

@@ -9,11 +9,13 @@
 #import "uzysRootViewController.h"
 #import "UzysRadialProgressActivityIndicator.h"
 #import "UIScrollView+UzysCircularProgressPullToRefresh.h"
-@interface uzysRootViewController ()
+@interface uzysRootViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UzysRadialProgressActivityIndicator *radialIndicator;
 @property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *pData;
 @end
-
+#define CELLIDENTIFIER @"CELL"
 @implementation uzysRootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,43 +30,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self setupDataSource];
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.title = @"UzysCircularProgressPullToRefresh";
-    
-//    if([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)])
-//        self.automaticallyAdjustsScrollViewInsets = NO;
-//    
-    
-    //scrollView에 사진 넣고 PulltoRefresh 테스트.
-    UIScrollView *scrollView =[[UIScrollView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:scrollView];
-    scrollView.backgroundColor = [UIColor grayColor];
-    scrollView.contentSize = CGSizeMake(320, 1500);
-    scrollView.clipsToBounds = YES;
-
-    self.scrollView = scrollView;
-    UIView *test = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1500)];
-    test.backgroundColor = [UIColor darkGrayColor];
-    [scrollView addSubview:test];
-    
-
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    btn.frame = CGRectMake(100, 100, 50, 50);
-//    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-//    btn.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:btn];
-    
-    NSLog(@"scrollView contentInset %@",NSStringFromUIEdgeInsets(self.scrollView.contentInset));
-
-    
-}
-- (void)btnAction:(id)sender
-{
-    [self.scrollView triggerPullToRefresh];
-}
-- (void)actionEndIndicator
-{
-    [self.scrollView.pullToRefreshView stopIndicatorAnimation];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELLIDENTIFIER];
+    [self.view addSubview:self.tableView];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -76,10 +50,61 @@
 {
     [super viewWillAppear:animated];
     __weak typeof(self) weakSelf =self;
-    [_scrollView addPullToRefreshActionHandler:^{
-        [weakSelf performSelector:@selector(actionEndIndicator) withObject:nil afterDelay:2];
+
+    //Because of self.automaticallyAdjustsScrollViewInsets you must add code below in viewWillApper
+    [_tableView addPullToRefreshActionHandler:^{
+        [weakSelf insertRowAtTop];
     }];
-    NSLog(@"scrollView contentInset %@",NSStringFromUIEdgeInsets(self.scrollView.contentInset));
 
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //manually triggered pulltorefresh
+    [_tableView triggerPullToRefresh];
+}
+
+#pragma mark UITableView DataManagement
+- (void)setupDataSource {
+    self.pData = [NSMutableArray array];
+    for(int i=0; i<20; i++)
+        [self.pData addObject:[NSDate dateWithTimeIntervalSinceNow:-(i*100)]];
+}
+
+- (void)insertRowAtTop {
+    __weak typeof(self) weakSelf = self;
+    
+    int64_t delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [weakSelf.tableView beginUpdates];
+        [weakSelf.pData insertObject:[NSDate date] atIndex:0];
+        [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        [weakSelf.tableView endUpdates];
+
+        //Stop PullToRefresh Activity Animation
+        [weakSelf.tableView stopRefreshAnimation];
+    });
+}
+
+#pragma mark UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.pData.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER];
+    
+    NSDate *date = [self.pData objectAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor grayColor];
+    cell.textLabel.text = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterMediumStyle];
+    return cell;
+}
+
+
 @end

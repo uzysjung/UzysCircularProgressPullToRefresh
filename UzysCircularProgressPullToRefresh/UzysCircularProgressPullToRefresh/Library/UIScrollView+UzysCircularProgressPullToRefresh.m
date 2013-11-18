@@ -34,7 +34,10 @@ static char UIScrollViewPullToRefreshView;
 {
     [self.pullToRefreshView manuallyTriggered];
 }
-
+- (void)stopRefreshAnimation
+{
+    [self.pullToRefreshView stopIndicatorAnimation];
+}
 #pragma mark - property
 - (void)setPullToRefreshView:(UzysRadialProgressActivityIndicator *)pullToRefreshView
 {
