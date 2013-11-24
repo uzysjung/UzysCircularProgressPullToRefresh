@@ -38,7 +38,11 @@ adding PullToRefreshActionHandler
 ``` objective-c
 [_tableView triggerPullToRefresh];
 ```
- 
+
+### stop PullToRefresh Activity Animation
+``` objective-c
+[_tableView stopRefreshAnimation];
+```
 ## Contact
  - [Uzys.net](http://uzys.net)
 
