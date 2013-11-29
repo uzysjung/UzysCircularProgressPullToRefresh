@@ -55,7 +55,7 @@ adding PullToRefreshActionHandler
 ```
 #### borderColor change
 ``` objective-c
-        [self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
+[self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
 ```
 #### Image Icon change
 ``` objective-c
