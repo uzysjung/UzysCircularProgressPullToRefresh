@@ -252,11 +252,11 @@
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
-            NSLog(@"Stoped");
+//            NSLog(@"Stoped");
             break;
         case UZYSPullToRefreshStateNone: //detect action
         {
-            NSLog(@"None");
+//            NSLog(@"None");
             if(self.scrollView.isDragging && yOffset <0 )
             {
                 self.state = UZYSPullToRefreshStateTriggering;
@@ -264,20 +264,20 @@
         }
         case UZYSPullToRefreshStateTriggering: //progress
         {
-            NSLog(@"trigering");
+//            NSLog(@"trigering");
                 if(self.progress >= 1.0)
                     self.state = UZYSPullToRefreshStateTriggered;
         }
             break;
         case UZYSPullToRefreshStateTriggered: //fire actionhandler
-            NSLog(@"trigered");
+//            NSLog(@"trigered");
             if(self.scrollView.dragging == NO && prevProgress > 0.99)
             {
                 [self actionTriggeredState];
             }
             break;
         case UZYSPullToRefreshStateLoading: //wait until stopIndicatorAnimation
-            NSLog(@"loading");
+//            NSLog(@"loading");
             break;
         default:
             break;
