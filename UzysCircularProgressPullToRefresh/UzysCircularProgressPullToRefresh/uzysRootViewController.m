@@ -66,6 +66,11 @@
 #pragma mark UITableView DataManagement
 - (void)setupDataSource {
     self.pData = [NSMutableArray array];
+    [self.pData addObject:@"0"];
+    [self.pData addObject:@"1"];
+    [self.pData addObject:@"2"];
+    [self.pData addObject:@"3"];
+
     for(int i=0; i<20; i++)
         [self.pData addObject:[NSDate dateWithTimeIntervalSinceNow:-(i*100)]];
 }
@@ -73,7 +78,7 @@
 - (void)insertRowAtTop {
     __weak typeof(self) weakSelf = self;
     
-    int64_t delayInSeconds = 2.0;
+    int64_t delayInSeconds = 1.2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [weakSelf.tableView beginUpdates];
@@ -98,12 +103,62 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER];
     
-    NSDate *date = [self.pData objectAtIndex:indexPath.row];
-    cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
-    cell.textLabel.textColor = [UIColor grayColor];
-    cell.textLabel.text = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterMediumStyle];
+    if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"0"])
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.text = @"Changing Size";
+    }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] &&[[self.pData objectAtIndex:indexPath.row] isEqualToString:@"1"])
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.text = @"Chaging BorderWidth";
+    }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] &&[[self.pData objectAtIndex:indexPath.row] isEqualToString:@"2"])
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.text = @"Changing image";
+    }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] &&[[self.pData objectAtIndex:indexPath.row] isEqualToString:@"3"])
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.text = @"Changing borderColor";
+    }
+    else
+    {
+        NSDate *date = [self.pData objectAtIndex:indexPath.row];
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor grayColor];
+        cell.textLabel.text = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterMediumStyle];
+    }
+    
+    
+
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"0"])
+    {
+        [self.tableView.pullToRefreshView setSize:CGSizeMake(40, 40)];
+    }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"1"])
+    {
+        [self.tableView.pullToRefreshView setBorderWidth:4];
+    }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"2"])
+    {
+        [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
+    }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"3"])
+    {
+        [self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
+    }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 @end

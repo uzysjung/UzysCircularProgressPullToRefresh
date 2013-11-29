@@ -11,9 +11,12 @@
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
-#define PulltoRefreshThreshold 80.0
+#define PulltoRefreshThreshold 100.0
 
 @interface UzysRadialProgressActivityIndicatorBackgroundLayer : CALayer
+
+@property (nonatomic,assign) CGFloat outlineWidth;
+- (id)initWithBorderWidth:(CGFloat)width;
 
 @end
 @implementation UzysRadialProgressActivityIndicatorBackgroundLayer
@@ -21,22 +24,37 @@
 {
     self = [super init];
     if(self) {
+        self.outlineWidth=2.0f;
         self.contentsScale = [UIScreen mainScreen].scale;
         [self setNeedsDisplay];
     }
     return self;
 }
-
+- (id)initWithBorderWidth:(CGFloat)width
+{
+    self = [super init];
+    if(self) {
+        self.outlineWidth=width;
+        self.contentsScale = [UIScreen mainScreen].scale;
+        [self setNeedsDisplay];
+    }
+    return self;
+}
 - (void)drawInContext:(CGContextRef)ctx
 {
     //Draw white circle
     CGContextSetFillColor(ctx, CGColorGetComponents([UIColor colorWithWhite:1.0 alpha:0.8].CGColor));
-    CGContextFillEllipseInRect(ctx,CGRectInset(self.bounds, 2, 2));
+    CGContextFillEllipseInRect(ctx,CGRectInset(self.bounds, self.outlineWidth, self.outlineWidth));
 
     //Draw circle outline
     CGContextSetStrokeColorWithColor(ctx, [UIColor colorWithWhite:0.4 alpha:0.9].CGColor);
-    CGContextSetLineWidth(ctx, 2.5);
-    CGContextStrokeEllipseInRect(ctx, CGRectInset(self.bounds, 1, 1));
+    CGContextSetLineWidth(ctx, self.outlineWidth);
+    CGContextStrokeEllipseInRect(ctx, CGRectInset(self.bounds, self.outlineWidth , self.outlineWidth ));
+}
+- (void)setOutlineWidth:(CGFloat)outlineWidth
+{
+    _outlineWidth = outlineWidth;
+    [self setNeedsDisplay];
 }
 @end
 
@@ -46,7 +64,7 @@
 @property (nonatomic, strong) UzysRadialProgressActivityIndicatorBackgroundLayer *backgroundLayer;
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 @property (nonatomic, strong) CALayer *imageLayer;
-@property (nonatomic, strong) UIImage *imageIcon;
+@property (nonatomic, assign) double progress;
 
 @end
 @implementation UzysRadialProgressActivityIndicator
@@ -71,9 +89,11 @@
 
 - (void)_commonInit
 {
+    self.borderColor = [UIColor colorWithRed:203/255.0 green:32/255.0 blue:39/255.0 alpha:1];
+    self.borderWidth = 2.0f;
     self.contentMode = UIViewContentModeRedraw;
     self.state = UZYSPullToRefreshStateNone;
-    
+    self.backgroundColor = [UIColor clearColor];
     //init actitvity indicator
     _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicatorView.hidesWhenStopped = YES;
@@ -81,9 +101,8 @@
     [self addSubview:_activityIndicatorView];
     
     //init background layer
-    UzysRadialProgressActivityIndicatorBackgroundLayer *backgroundLayer = [[UzysRadialProgressActivityIndicatorBackgroundLayer alloc] init];
+    UzysRadialProgressActivityIndicatorBackgroundLayer *backgroundLayer = [[UzysRadialProgressActivityIndicatorBackgroundLayer alloc] initWithBorderWidth:self.borderWidth];
     backgroundLayer.frame = self.bounds;
-
     [self.layer addSublayer:backgroundLayer];
     self.backgroundLayer = backgroundLayer;
     
@@ -93,7 +112,7 @@
     //init icon layer
     CALayer *imageLayer = [CALayer layer];
     imageLayer.contentsScale = [UIScreen mainScreen].scale;
-    imageLayer.frame = self.bounds;
+    imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
     imageLayer.contents = (id)self.imageIcon.CGImage;
     [self.layer addSublayer:imageLayer];
     self.imageLayer = imageLayer;
@@ -103,14 +122,15 @@
     CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
     shapeLayer.frame = self.bounds;
     shapeLayer.fillColor = nil;
-    shapeLayer.strokeColor = [UIColor colorWithRed:203/255.0 green:32/255.0 blue:39/255.0 alpha:1].CGColor;
+    shapeLayer.strokeColor = self.borderColor.CGColor;
     shapeLayer.strokeEnd = 0;
     shapeLayer.shadowColor = [UIColor colorWithWhite:1 alpha:0.8].CGColor;
     shapeLayer.shadowOpacity = 0.7;
     shapeLayer.shadowRadius = 20;
     shapeLayer.contentsScale = [UIScreen mainScreen].scale;
-    shapeLayer.lineWidth = 2;
-
+    shapeLayer.lineWidth = self.borderWidth;
+    shapeLayer.lineCap = kCALineCapRound;
+    
     [self.layer addSublayer:shapeLayer];
     self.shapeLayer = shapeLayer;
 }
@@ -118,10 +138,13 @@
     [super layoutSubviews];
     self.shapeLayer.frame = self.bounds;
     [self updatePath];
+
 }
 - (void)updatePath {
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
-    self.shapeLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:self.bounds.size.width/2 - 1 startAngle:-M_PI_2 endAngle:-M_PI_2 + 2 * M_PI clockwise:NO].CGPath;
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:center radius:self.bounds.size.width/2 - self.borderWidth  startAngle:-M_PI_2 endAngle:-M_PI_2 + 2 * M_PI clockwise:NO];
+    self.shapeLayer.path = bezierPath.CGPath;
 }
 
 #pragma mark - ScrollViewInset
@@ -171,16 +194,13 @@
         animationImage.duration = 0.15;
         animationImage.removedOnCompletion = NO;
         animationImage.fillMode = kCAFillModeForwards;
-//        [CATransaction setDisableActions:YES];
-//        self.imageLayer.transform = CATransform3DMakeRotation(DEGREES_TO_RADIANS(180-180*progress), 0, 0, 1);
-//        [CATransaction setDisableActions:NO];
         [self.imageLayer addAnimation:animationImage forKey:@"animation"];
 
         //strokeAnimation
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
         animation.fromValue = [NSNumber numberWithFloat:((CAShapeLayer *)self.shapeLayer.presentationLayer).strokeEnd];
         animation.toValue = [NSNumber numberWithFloat:progress];
-        animation.duration = 0.15 + 0.35*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
+        animation.duration = 0.2 + 0.35*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
         animation.removedOnCompletion = NO;
         animation.fillMode = kCAFillModeForwards;
         [self.shapeLayer addAnimation:animation forKey:@"animation"];
@@ -200,6 +220,10 @@
     self.imageLayer.hidden = hidden;
     self.shapeLayer.hidden = hidden;
     self.backgroundLayer.hidden = hidden;
+}
+-(void)setCenter:(CGPoint)center
+{
+    [super setCenter:center];
 }
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -222,19 +246,15 @@
 - (void)scrollViewDidScroll:(CGPoint)contentOffset
 {
     static double prevProgress;
-//    NSLog(@"dragging %d",self.scrollView.dragging);
     CGFloat yOffset = contentOffset.y;
     self.progress = ((yOffset+ self.originalTopInset)/-PulltoRefreshThreshold);
     
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
-//            NSLog(@"StateStop");
-//            [self actionStopState];
             break;
         case UZYSPullToRefreshStateNone: //detect action
         {
-//            NSLog(@"StateNone");
             if(self.scrollView.isDragging && yOffset <0 )
             {
                 self.state = UZYSPullToRefreshStateTriggering;
@@ -242,13 +262,11 @@
         }
         case UZYSPullToRefreshStateTriggering: //progress
         {
-//             NSLog(@"StateTrigering");
                 if(self.progress >= 1.0)
                     self.state = UZYSPullToRefreshStateTriggered;
         }
             break;
         case UZYSPullToRefreshStateTriggered: //fire actionhandler
-//            NSLog(@"StateTrigered %f dragging %d",prevProgress,self.scrollView.dragging);
             if(self.scrollView.dragging == NO && prevProgress > 0.99)
             {
                 [self actionTriggeredState];
@@ -284,7 +302,6 @@
 }
 -(void)actionTriggeredState
 {
-//    NSLog(@"call triggered state");
     self.state = UZYSPullToRefreshStateLoading;
     
     [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
@@ -297,7 +314,6 @@
     [self setupScrollViewContentInsetForLoadingIndicator:nil];
     if(self.pullToRefreshHandler)
         self.pullToRefreshHandler();
-    
 }
 
 #pragma mark - public method
@@ -316,9 +332,42 @@
     } completion:^(BOOL finished) {
         [self actionTriggeredState];
     }];
-//    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -currentInsets.top) animated:YES];
+}
+- (void)setSize:(CGSize) size
+{
+    CGRect rect = CGRectMake((self.scrollView.bounds.size.width - size.width)/2,
+                             -size.height, size.width, size.height);
+
+    self.frame=rect;
+    self.shapeLayer.frame = self.bounds;
+    self.activityIndicatorView.frame = self.bounds;
+    self.imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
+    
+    self.backgroundLayer.frame = self.bounds;
+    [self.backgroundLayer setNeedsDisplay];
+}
+- (void)setImageIcon:(UIImage *)imageIcon
+{
+    _imageIcon = imageIcon;
+    _imageLayer.contents = (id)_imageIcon.CGImage;
+    _imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
+
+    [self setSize:_imageIcon.size];
+}
+- (void)setBorderWidth:(CGFloat)borderWidth
+{
+    _borderWidth = borderWidth;
+    
+    _backgroundLayer.outlineWidth = _borderWidth;
+    [_backgroundLayer setNeedsDisplay];
+    
+    _shapeLayer.lineWidth = _borderWidth;
+    _imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
 
 }
-
-
+- (void)setBorderColor:(UIColor *)borderColor
+{
+    _borderColor = borderColor;
+    _shapeLayer.strokeColor = _borderColor.CGColor;
+}
 @end

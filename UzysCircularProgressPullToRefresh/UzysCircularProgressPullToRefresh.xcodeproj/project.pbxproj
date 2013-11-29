@@ -23,6 +23,7 @@
 		957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 957BAAB91834C92F009A8358 /* centerIcon@2x.png */; };
 		957BAABF1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */; };
 		957BAAC01834C92F009A8358 /* UzysRadialProgressActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */; };
+		95E79A311848820300CDB0D1 /* thunderbird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E79A301848820300CDB0D1 /* thunderbird@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UzysCircularProgressPullToRefresh.m"; sourceTree = "<group>"; };
 		957BAABC1834C92F009A8358 /* UzysRadialProgressActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysRadialProgressActivityIndicator.h; sourceTree = "<group>"; };
 		957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysRadialProgressActivityIndicator.m; sourceTree = "<group>"; };
+		95E79A301848820300CDB0D1 /* thunderbird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thunderbird@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		951CC0641834AB49008B47FA /* UzysCircularProgressPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				95E79A301848820300CDB0D1 /* thunderbird@2x.png */,
 				957BAAB81834C92F009A8358 /* Library */,
 				951CC06D1834AB49008B47FA /* uzysAppDelegate.h */,
 				951CC06E1834AB49008B47FA /* uzysAppDelegate.m */,
@@ -248,6 +251,7 @@
 			files = (
 				951CC0691834AB49008B47FA /* InfoPlist.strings in Resources */,
 				951CC0711834AB49008B47FA /* Images.xcassets in Resources */,
+				95E79A311848820300CDB0D1 /* thunderbird@2x.png in Resources */,
 				957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

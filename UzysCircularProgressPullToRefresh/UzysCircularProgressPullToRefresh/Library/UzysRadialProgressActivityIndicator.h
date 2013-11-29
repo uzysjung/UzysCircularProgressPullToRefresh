@@ -21,16 +21,18 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
 @interface UzysRadialProgressActivityIndicator : UIView
 
 @property (nonatomic,assign) BOOL isObserving;
-@property (nonatomic,assign) double progress;
-@property (nonatomic, assign) CGFloat originalTopInset;
-
+@property (nonatomic,assign) CGFloat originalTopInset;
 @property (nonatomic,assign) UZYSPullToRefreshState state;
 @property (nonatomic,weak) UIScrollView *scrollView;
 @property (nonatomic,copy) actionHandler pullToRefreshHandler;
-- (id)initWithImage:(UIImage *)image;
 
-- (void)setProgress:(double)progress;
-
+@property (nonatomic,strong) UIImage *imageIcon;
+@property (nonatomic,assign) CGFloat borderWidth;
+@property (nonatomic,strong) UIColor *borderColor;
 - (void)stopIndicatorAnimation;
 - (void)manuallyTriggered;
+
+- (id)initWithImage:(UIImage *)image;
+- (void)setSize:(CGSize) size;
+
 @end
