@@ -43,6 +43,26 @@ adding PullToRefreshActionHandler
 ``` objective-c
 [_tableView stopRefreshAnimation];
 ```
+
+### support customization
+#### size change
+``` objective-c
+[self.tableView.pullToRefreshView setSize:CGSizeMake(40, 40)];
+```
+#### borderWidth change
+``` objective-c
+[self.tableView.pullToRefreshView setBorderWidth:4];
+```
+#### borderColor change
+``` objective-c
+        [self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
+```
+#### Image Icon change
+``` objective-c
+[self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
+```
+
+
 ## Contact
  - [Uzys.net](http://uzys.net)
 
