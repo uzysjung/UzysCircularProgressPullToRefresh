@@ -165,7 +165,7 @@
 {
     [UIView animateWithDuration:0.3
                           delay:0
-                        options:UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState
+                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
                          self.scrollView.contentInset = contentInset;
                      }
@@ -252,9 +252,11 @@
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
+            NSLog(@"Stoped");
             break;
         case UZYSPullToRefreshStateNone: //detect action
         {
+            NSLog(@"None");
             if(self.scrollView.isDragging && yOffset <0 )
             {
                 self.state = UZYSPullToRefreshStateTriggering;
@@ -262,17 +264,20 @@
         }
         case UZYSPullToRefreshStateTriggering: //progress
         {
+            NSLog(@"trigering");
                 if(self.progress >= 1.0)
                     self.state = UZYSPullToRefreshStateTriggered;
         }
             break;
         case UZYSPullToRefreshStateTriggered: //fire actionhandler
+            NSLog(@"trigered");
             if(self.scrollView.dragging == NO && prevProgress > 0.99)
             {
                 [self actionTriggeredState];
             }
             break;
         case UZYSPullToRefreshStateLoading: //wait until stopIndicatorAnimation
+            NSLog(@"loading");
             break;
         default:
             break;
@@ -289,13 +294,9 @@
     } completion:^(BOOL finished) {
         self.activityIndicatorView.transform = CGAffineTransformIdentity;
         [self.activityIndicatorView stopAnimating];
-        
-        [self.scrollView setContentOffset:CGPointMake(0, -(self.originalTopInset + self.bounds.size.height + 20.0)) animated:YES];
-
         [self resetScrollViewContentInset:^{
             [self setLayerHidden:NO];
             [self setLayerOpacity:1.0];
-            NSLog(@"contentInset %f",self.scrollView.contentInset.top);
         }];
 
     }];
