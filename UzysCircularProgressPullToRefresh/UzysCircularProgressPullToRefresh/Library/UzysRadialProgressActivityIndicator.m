@@ -134,6 +134,7 @@
     [self.layer addSublayer:shapeLayer];
     self.shapeLayer = shapeLayer;
 }
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.shapeLayer.frame = self.bounds;
@@ -143,7 +144,8 @@
 - (void)updatePath {
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:center radius:self.bounds.size.width/2 - self.borderWidth  startAngle:-M_PI_2 endAngle:-M_PI_2 + 2 * M_PI clockwise:NO];
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:center radius:(self.bounds.size.width/2 - self.borderWidth)  startAngle:DEGREES_TO_RADIANS(-90) endAngle:DEGREES_TO_RADIANS(360-90) clockwise:NO];
+
     self.shapeLayer.path = bezierPath.CGPath;
 }
 
@@ -200,9 +202,11 @@
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
         animation.fromValue = [NSNumber numberWithFloat:((CAShapeLayer *)self.shapeLayer.presentationLayer).strokeEnd];
         animation.toValue = [NSNumber numberWithFloat:progress];
-        animation.duration = 0.2 + 0.35*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
+        animation.duration = 0.35 + 0.25*(fabs([animation.fromValue doubleValue] - [animation.toValue doubleValue]));
         animation.removedOnCompletion = NO;
         animation.fillMode = kCAFillModeForwards;
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+//        [self.shapeLayer removeAllAnimations];
         [self.shapeLayer addAnimation:animation forKey:@"animation"];
         
     }

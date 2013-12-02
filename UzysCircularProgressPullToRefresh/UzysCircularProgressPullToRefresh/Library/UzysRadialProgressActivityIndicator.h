@@ -27,8 +27,9 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
 @property (nonatomic,copy) actionHandler pullToRefreshHandler;
 
 @property (nonatomic,strong) UIImage *imageIcon;
-@property (nonatomic,assign) CGFloat borderWidth;
 @property (nonatomic,strong) UIColor *borderColor;
+@property (nonatomic,assign) CGFloat borderWidth;
+
 - (void)stopIndicatorAnimation;
 - (void)manuallyTriggered;
 
