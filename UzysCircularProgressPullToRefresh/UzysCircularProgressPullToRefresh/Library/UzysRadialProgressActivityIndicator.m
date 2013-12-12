@@ -144,7 +144,7 @@
 - (void)updatePath {
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:center radius:(self.bounds.size.width/2 - self.borderWidth)  startAngle:DEGREES_TO_RADIANS(-90) endAngle:DEGREES_TO_RADIANS(360-90) clockwise:NO];
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:center radius:(self.bounds.size.width/2 - self.borderWidth)  startAngle:M_PI - DEGREES_TO_RADIANS(-90) endAngle:M_PI -DEGREES_TO_RADIANS(360-90) clockwise:NO];
 
     self.shapeLayer.path = bezierPath.CGPath;
 }
