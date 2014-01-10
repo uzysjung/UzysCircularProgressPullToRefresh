@@ -7,7 +7,7 @@
 //
 
 #import "UzysRadialProgressActivityIndicator.h"
-
+#import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
@@ -290,6 +290,24 @@
     prevProgress = self.progress;
     
 }
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if (self.superview && newSuperview == nil) {
+        //use self.superview, not self.scrollView. Why self.scrollView == nil here?
+        UIScrollView *scrollView = (UIScrollView *)self.superview;
+        if (scrollView.showPullToRefresh) {
+            if (self.isObserving) {
+                //If enter this branch, it is the moment just before "SVPullToRefreshView's dealloc", so remove observer here
+                [scrollView removeObserver:self forKeyPath:@"contentOffset"];
+                [scrollView removeObserver:self forKeyPath:@"contentSize"];
+                [scrollView removeObserver:self forKeyPath:@"frame"];
+                self.isObserving = NO;
+            }
+        }
+    }
+}
+
+
 -(void)actionStopState
 {
     self.state = UZYSPullToRefreshStateNone;
