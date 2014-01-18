@@ -63,6 +63,10 @@ adding PullToRefreshActionHandler
 [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
 ```
 
+#### pulling offset change (UzysRadialProgressActivityIndicator.m)
+``` objective-c
+#define PulltoRefreshThreshold 100.0
+```
 
 ## Contact
  - [Uzys.net](http://uzys.net)
