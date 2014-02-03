@@ -176,7 +176,21 @@
                              handler();
                      }];
 }
+- (void)updateCenter
+{
+	self.center = CGPointMake(self.center.x, (self.scrollView.contentOffset.y + self.originalTopInset)/2 + self.positionOffset.y);
+}
 #pragma mark - property
+- (void)setPositionOffset:(CGPoint)positionOffset
+{
+	CGPoint oldPositionOffset = _positionOffset;
+	_positionOffset = positionOffset;
+	
+	if(!CGPointEqualToPoint(oldPositionOffset, self.positionOffset))
+	{
+		[self updateCenter];
+	}
+}
 - (void)setProgress:(double)progress
 {
     static double prevProgress;
@@ -253,7 +267,8 @@
     CGFloat yOffset = contentOffset.y;
     self.progress = ((yOffset+ self.originalTopInset)/-PulltoRefreshThreshold);
     
-    self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
+	[self updateCenter];
+	
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
 //            NSLog(@"Stoped");
@@ -358,8 +373,8 @@
 }
 - (void)setSize:(CGSize) size
 {
-    CGRect rect = CGRectMake((self.scrollView.bounds.size.width - size.width)/2,
-                             -size.height, size.width, size.height);
+    CGRect rect = CGRectMake((self.scrollView.bounds.size.width - size.width)/2 + self.positionOffset.x,
+                             -size.height + self.positionOffset.y, size.width, size.height);
 
     self.frame=rect;
     self.shapeLayer.frame = self.bounds;

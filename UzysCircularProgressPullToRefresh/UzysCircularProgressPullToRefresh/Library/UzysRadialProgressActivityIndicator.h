@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
 
 @property (nonatomic,assign) BOOL isObserving;
 @property (nonatomic,assign) CGFloat originalTopInset;
+@property (nonatomic,assign) CGPoint positionOffset;
 @property (nonatomic,assign) UZYSPullToRefreshState state;
 @property (nonatomic,weak) UIScrollView *scrollView;
 @property (nonatomic,copy) actionHandler pullToRefreshHandler;

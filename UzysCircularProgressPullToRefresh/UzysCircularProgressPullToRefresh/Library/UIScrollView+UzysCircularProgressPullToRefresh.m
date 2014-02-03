@@ -20,8 +20,8 @@ static char UIScrollViewPullToRefreshView;
         UzysRadialProgressActivityIndicator *view = [[UzysRadialProgressActivityIndicator alloc] initWithImage:[UIImage imageNamed:@"centerIcon"]];
         view.pullToRefreshHandler = handler;
         view.scrollView = self;
-        view.frame = CGRectMake((self.bounds.size.width - view.bounds.size.width)/2,
-                                -view.bounds.size.height, view.bounds.size.width, view.bounds.size.height);
+        view.frame = CGRectMake((self.bounds.size.width - view.bounds.size.width)/2 + view.positionOffset.x,
+                                -view.bounds.size.height + view.positionOffset.y, view.bounds.size.width, view.bounds.size.height);
         view.originalTopInset = self.contentInset.top;
         [self addSubview:view];
         [self sendSubviewToBack:view];
