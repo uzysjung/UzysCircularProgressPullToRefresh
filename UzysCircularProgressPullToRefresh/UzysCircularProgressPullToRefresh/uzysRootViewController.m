@@ -9,7 +9,7 @@
 #import "uzysRootViewController.h"
 #import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 @interface uzysRootViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong) UzysRadialProgressActivityIndicator *radialIndicator;
+@property (nonatomic,strong) UZYSCircularProgressActivityIndicator *radialIndicator;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *pData;
 @end
@@ -87,7 +87,7 @@
         [weakSelf.tableView endUpdates];
 
         //Stop PullToRefresh Activity Animation
-        [weakSelf.tableView stopRefreshAnimation];
+        [weakSelf.tableView stopPullToRefreshAnimation];
     });
 }
 
@@ -144,15 +144,15 @@
 {
     if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"0"])
     {
-        [self.tableView.pullToRefreshView setSize:CGSizeMake(40, 40)];
+        [self.tableView.pullToRefreshView setSize:CGSizeMake(50.0, 50.0)];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"1"])
     {
-        [self.tableView.pullToRefreshView setBorderWidth:4];
+        [self.tableView.pullToRefreshView setBorderWidth:4.0];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"2"])
     {
-        [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
+        [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird.png"]];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"3"])
     {

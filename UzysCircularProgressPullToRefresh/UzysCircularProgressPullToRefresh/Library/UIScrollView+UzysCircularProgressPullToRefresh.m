@@ -6,77 +6,72 @@
 //  Copyright (c) 2013년 Uzysjung. All rights reserved.
 //
 
-#import "UIScrollView+UzysCircularProgressPullToRefresh.h"
+#import "UIScrollView+UZYSCircularProgressPullToRefresh.h"
 #import <objc/runtime.h>
-static char UIScrollViewPullToRefreshView;
 
-@implementation UIScrollView (UzysInteractiveIndicator)
-@dynamic pullToRefreshView, showPullToRefresh;
 
-- (void)addPullToRefreshActionHandler:(actionHandler)handler
+@implementation UIScrollView (UZYSInteractiveIndicator)
+
+- (UZYSCircularProgressActivityIndicator *)pullToRefreshView
 {
-    if(self.pullToRefreshView == nil)
+    UZYSCircularProgressActivityIndicator *pullToRefreshView = objc_getAssociatedObject(self, @selector(pullToRefreshView));
+	
+	if(!pullToRefreshView)
+	{
+		pullToRefreshView = [[UZYSCircularProgressActivityIndicator alloc] initWithScrollView:self];
+		self.pullToRefreshView = pullToRefreshView;
+	}
+	
+	return pullToRefreshView;
+}
+
+- (void)setPullToRefreshView:(UZYSCircularProgressActivityIndicator *)pullToRefreshView
+{
+    objc_setAssociatedObject(self, @selector(pullToRefreshView), pullToRefreshView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)showsPullToRefreshView
+{
+	return [objc_getAssociatedObject(self, @selector(showsPullToRefreshView)) boolValue];
+}
+
+- (void)setShowsPullToRefreshView:(BOOL)showsPullToRefreshView
+{
+	objc_setAssociatedObject(self, @selector(showsPullToRefreshView), @(showsPullToRefreshView), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)addPullToRefreshActionHandler:(UZYSCircularProgressPullToRefreshActionHandler)handler
+{
+    if(!self.showsPullToRefreshView)
     {
-        UzysRadialProgressActivityIndicator *view = [[UzysRadialProgressActivityIndicator alloc] initWithImage:[UIImage imageNamed:@"centerIcon"]];
-        view.pullToRefreshHandler = handler;
-        view.scrollView = self;
-        view.frame = CGRectMake((self.bounds.size.width - view.bounds.size.width)/2 + view.positionOffset.x,
-                                -view.bounds.size.height + view.positionOffset.y, view.bounds.size.width, view.bounds.size.height);
-        view.originalTopInset = self.contentInset.top;
-        [self addSubview:view];
-        [self sendSubviewToBack:view];
-        self.pullToRefreshView = view;
-        self.showPullToRefresh = YES;
+        self.pullToRefreshView.pullToRefreshHandler = handler;
+		
+        [self addSubview:self.pullToRefreshView];
+        [self sendSubviewToBack:self.pullToRefreshView];
+        
+        self.showsPullToRefreshView = YES;
     }
+}
+
+- (void)removePullToRefreshView
+{
+	if(self.showsPullToRefreshView)
+	{
+		[self.pullToRefreshView removeFromSuperview];
+		self.pullToRefreshView = nil;
+		
+		self.showsPullToRefreshView = NO;
+	}
 }
 
 - (void)triggerPullToRefresh
 {
     [self.pullToRefreshView manuallyTriggered];
 }
-- (void)stopRefreshAnimation
+
+- (void)stopPullToRefreshAnimation
 {
     [self.pullToRefreshView stopIndicatorAnimation];
 }
-#pragma mark - property
-- (void)setPullToRefreshView:(UzysRadialProgressActivityIndicator *)pullToRefreshView
-{
-    [self willChangeValueForKey:@"UzysRadialProgressActivityIndicator"];
-    objc_setAssociatedObject(self, &UIScrollViewPullToRefreshView, pullToRefreshView, OBJC_ASSOCIATION_ASSIGN);
-    [self didChangeValueForKey:@"UzysRadialProgressActivityIndicator"];
-}
-- (UzysRadialProgressActivityIndicator *)pullToRefreshView
-{
-    return objc_getAssociatedObject(self, &UIScrollViewPullToRefreshView);
-}
 
-- (void)setShowPullToRefresh:(BOOL)showPullToRefresh {
-    self.pullToRefreshView.hidden = !showPullToRefresh;
-    
-    if(showPullToRefresh)
-    {
-        if(!self.pullToRefreshView.isObserving)
-        {
-            [self addObserver:self.pullToRefreshView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-            [self addObserver:self.pullToRefreshView forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
-            [self addObserver:self.pullToRefreshView forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
-            self.pullToRefreshView.isObserving = YES;
-        }
-    }
-    else
-    {
-        if(self.pullToRefreshView.isObserving)
-        {
-            [self removeObserver:self.pullToRefreshView forKeyPath:@"contentOffset"];
-            [self removeObserver:self.pullToRefreshView forKeyPath:@"contentSize"];
-            [self removeObserver:self.pullToRefreshView forKeyPath:@"frame"];
-            self.pullToRefreshView.isObserving = NO;
-        }
-    }
-}
-
-- (BOOL)showPullToRefresh
-{
-    return !self.pullToRefreshView.hidden;
-}
 @end
