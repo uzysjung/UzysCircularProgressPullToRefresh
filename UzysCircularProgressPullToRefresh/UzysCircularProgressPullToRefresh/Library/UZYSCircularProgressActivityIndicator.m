@@ -355,29 +355,33 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 	self.currentTopInset = self.scrollView.contentInset.top;
 }
 
+- (CGFloat)topOffsetForLoadingIndicator
+{
+	return self.currentTopInset + self.bounds.size.height + 20.0;
+}
+
 - (void)setupScrollViewContentInsetForLoadingIndicator:(UZYSCircularProgressPullToRefreshActionHandler)handler
 {
     CGFloat offset = MAX(-self.scrollView.contentOffset.y, 0.0);
-    UIEdgeInsets insets = self.scrollView.contentInset;
-    insets.top = MIN(offset, self.currentTopInset + self.bounds.size.height + 20.0);
+    CGFloat newInsetTop = MIN(offset, [self topOffsetForLoadingIndicator]);
 	
-    [self setScrollViewContentInset:insets handler:handler];
+    [self setScrollViewContentInsetTop:newInsetTop handler:handler];
 }
 
 - (void)resetScrollViewContentInset:(UZYSCircularProgressPullToRefreshActionHandler)handler
 {
-    UIEdgeInsets insets = self.scrollView.contentInset;
-    insets.top = self.currentTopInset;
-	
-    [self setScrollViewContentInset:insets handler:handler];
+    [self setScrollViewContentInsetTop:self.currentTopInset handler:handler];
 }
 
-- (void)setScrollViewContentInset:(UIEdgeInsets)contentInset handler:(UZYSCircularProgressPullToRefreshActionHandler)handler
+- (void)setScrollViewContentInsetTop:(CGFloat)insetTop handler:(UZYSCircularProgressPullToRefreshActionHandler)handler
 {
-	[UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState animations:^
+	[UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState animations:^
 	{
+		UIEdgeInsets newInset = self.scrollView.contentInset;
+		newInset.top = insetTop;
+		
 		self.updatingScrollViewInsets = YES;
-		self.scrollView.contentInset = contentInset;
+		self.scrollView.contentInset = newInset;
 		self.updatingScrollViewInsets = NO;
 	}
     completion:^(BOOL finished)
@@ -389,11 +393,31 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
     }];
 }
 
-- (void)setScrollViewContentOffsetY:(CGFloat)offsetY
+- (void)setupScrollViewContentOffsetForLoadingIndicator:(UZYSCircularProgressPullToRefreshActionHandler)handler
 {
-	self.updatingScrollViewOffset = YES;
-	self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, offsetY);
-	self.updatingScrollViewOffset = NO;
+	CGFloat newContentOffsetY = -[self topOffsetForLoadingIndicator];
+	
+    [self setScrollViewContentOffsetY:newContentOffsetY handler:handler];
+}
+
+- (void)setScrollViewContentOffsetY:(CGFloat)offsetY handler:(UZYSCircularProgressPullToRefreshActionHandler)handler
+{
+	[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState animations:^
+	 {
+		 CGPoint newOffset = self.scrollView.contentOffset;
+		 newOffset.y = offsetY;
+		 
+		 self.updatingScrollViewOffset = YES;
+		 self.scrollView.contentOffset = newOffset;
+		 self.updatingScrollViewOffset = NO;
+	 }
+	 completion:^(BOOL finished)
+	 {
+		 if(handler)
+		 {
+			 handler(); 
+		 }
+	 }];
 }
 
 - (void)toggleActivityIndicator:(BOOL)toggle
@@ -507,17 +531,10 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 {
 	[self setLayersHidden:YES];
 	
-    UIEdgeInsets currentInsets = self.scrollView.contentInset;
-    currentInsets.top = self.currentTopInset + self.bounds.size.height + 20.0;
-	
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^
+	[self setupScrollViewContentOffsetForLoadingIndicator:^
 	{
-		[self setScrollViewContentOffsetY:-currentInsets.top];
-    }
-	completion:^(BOOL finished)
-	{
-        [self actionTriggeredState];
-    }];
+		[self actionTriggeredState];
+	}];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
