@@ -93,8 +93,6 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 	self.backgroundColor = [UIColor clearColor];
 	
 	self.alpha = 0.0;
-	[self setLayersOpacity:0.0];
-	[self setLayersHidden:YES];
 	
     self.borderColor = [UIColor colorWithRed:203.0 / 255.0 green:32.0 / 255.0 blue:39.0 / 255.0 alpha:1.0];
     self.borderWidth = 3.0;
