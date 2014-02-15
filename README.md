@@ -20,7 +20,7 @@ Copy over the files libary folder to your project folder
 ###Import header.
 
 ``` objective-c
-#import "UIScrollView+UzysCircularProgressPullToRefresh.h"
+#import "UIScrollView+UZYSCircularProgressPullToRefresh.h"
 ```
 
 ### Initialize
@@ -29,8 +29,9 @@ adding PullToRefreshActionHandler
 ``` objective-c
 -(void)viewWillAppear:(BOOL)animated
 {
-  __weak typeof(self) weakSelf =self;
-  [_tableView addPullToRefreshActionHandler:^{
+  __weak typeof(self) weakSelf = self;
+  [_tableView addPullToRefreshActionHandler:^
+  {
       [weakSelf insertRowAtTop];
   }];
 }
@@ -48,24 +49,30 @@ adding PullToRefreshActionHandler
 ### support customization
 #### size change
 ``` objective-c
-[self.tableView.pullToRefreshView setSize:CGSizeMake(40, 40)];
+[self.tableView.pullToRefreshView setSize:CGSizeMake(40.0, 40.0)];
 ```
 #### borderWidth change
 ``` objective-c
-[self.tableView.pullToRefreshView setBorderWidth:4];
+[self.tableView.pullToRefreshView setBorderWidth:4.0];
 ```
 #### borderColor change
 ``` objective-c
-[self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
+[self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75.0 / 255.0 green:131.0 / 255.0 blue:188.0 / 255.0 alpha:1.0]];
 ```
 #### Image Icon change
 ``` objective-c
 [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
 ```
 
-#### pulling offset change (UzysRadialProgressActivityIndicator.m)
+#### pulling offset change (UZYSRadialProgressActivityIndicator.m)
 ``` objective-c
-#define PulltoRefreshThreshold 100.0
+#define PullToRefreshThreshold 80.0
+```
+
+### Removal
+You have to remove when your scroll view is about to get deallocated
+``` objective-c
+[self.tableView removePullToRefreshView];
 ```
 
 ## Contact

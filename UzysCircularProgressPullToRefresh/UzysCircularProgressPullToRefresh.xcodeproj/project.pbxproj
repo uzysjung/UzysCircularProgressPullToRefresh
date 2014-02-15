@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9299B4E918A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299B4E818A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.m */; };
+		9299B4EB18A2A8D7009374B5 /* thunderbird.png in Resources */ = {isa = PBXBuildFile; fileRef = 9299B4EA18A2A8D7009374B5 /* thunderbird.png */; };
 		951CC05F1834AB49008B47FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CC05E1834AB49008B47FA /* Foundation.framework */; };
 		951CC0611834AB49008B47FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CC0601834AB49008B47FA /* CoreGraphics.framework */; };
 		951CC0631834AB49008B47FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CC0621834AB49008B47FA /* UIKit.framework */; };
@@ -20,9 +22,7 @@
 		951CC0821834AB49008B47FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951CC0801834AB49008B47FA /* InfoPlist.strings */; };
 		951CC0841834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CC0831834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m */; };
 		957BAAB71834C8EF009A8358 /* uzysRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAAB61834C8EF009A8358 /* uzysRootViewController.m */; };
-		957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 957BAAB91834C92F009A8358 /* centerIcon@2x.png */; };
 		957BAABF1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */; };
-		957BAAC01834C92F009A8358 /* UzysRadialProgressActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */; };
 		95E79A311848820300CDB0D1 /* thunderbird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E79A301848820300CDB0D1 /* thunderbird@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9299B4E718A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZYSCircularProgressActivityIndicator.h; sourceTree = "<group>"; };
+		9299B4E818A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZYSCircularProgressActivityIndicator.m; sourceTree = "<group>"; };
+		9299B4EA18A2A8D7009374B5 /* thunderbird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thunderbird.png; sourceTree = "<group>"; };
 		951CC05B1834AB49008B47FA /* UzysCircularProgressPullToRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UzysCircularProgressPullToRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951CC05E1834AB49008B47FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		951CC0601834AB49008B47FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,11 +58,8 @@
 		951CC0831834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UzysCircularProgressPullToRefreshTests.m; sourceTree = "<group>"; };
 		957BAAB51834C8EF009A8358 /* uzysRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uzysRootViewController.h; sourceTree = "<group>"; };
 		957BAAB61834C8EF009A8358 /* uzysRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uzysRootViewController.m; sourceTree = "<group>"; };
-		957BAAB91834C92F009A8358 /* centerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "centerIcon@2x.png"; sourceTree = "<group>"; };
 		957BAABA1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UzysCircularProgressPullToRefresh.h"; sourceTree = "<group>"; };
 		957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UzysCircularProgressPullToRefresh.m"; sourceTree = "<group>"; };
-		957BAABC1834C92F009A8358 /* UzysRadialProgressActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysRadialProgressActivityIndicator.h; sourceTree = "<group>"; };
-		957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysRadialProgressActivityIndicator.m; sourceTree = "<group>"; };
 		95E79A301848820300CDB0D1 /* thunderbird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thunderbird@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,6 @@
 		951CC0641834AB49008B47FA /* UzysCircularProgressPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				95E79A301848820300CDB0D1 /* thunderbird@2x.png */,
 				957BAAB81834C92F009A8358 /* Library */,
 				951CC06D1834AB49008B47FA /* uzysAppDelegate.h */,
 				951CC06E1834AB49008B47FA /* uzysAppDelegate.m */,
@@ -135,6 +134,8 @@
 		951CC0651834AB49008B47FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95E79A301848820300CDB0D1 /* thunderbird@2x.png */,
+				9299B4EA18A2A8D7009374B5 /* thunderbird.png */,
 				951CC0661834AB49008B47FA /* UzysCircularProgressPullToRefresh-Info.plist */,
 				951CC0671834AB49008B47FA /* InfoPlist.strings */,
 				951CC06A1834AB49008B47FA /* main.m */,
@@ -164,11 +165,10 @@
 		957BAAB81834C92F009A8358 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				957BAAB91834C92F009A8358 /* centerIcon@2x.png */,
 				957BAABA1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.h */,
 				957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */,
-				957BAABC1834C92F009A8358 /* UzysRadialProgressActivityIndicator.h */,
-				957BAABD1834C92F009A8358 /* UzysRadialProgressActivityIndicator.m */,
+				9299B4E718A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.h */,
+				9299B4E818A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -251,8 +251,8 @@
 			files = (
 				951CC0691834AB49008B47FA /* InfoPlist.strings in Resources */,
 				951CC0711834AB49008B47FA /* Images.xcassets in Resources */,
+				9299B4EB18A2A8D7009374B5 /* thunderbird.png in Resources */,
 				95E79A311848820300CDB0D1 /* thunderbird@2x.png in Resources */,
-				957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,11 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				957BAAC01834C92F009A8358 /* UzysRadialProgressActivityIndicator.m in Sources */,
 				957BAAB71834C8EF009A8358 /* uzysRootViewController.m in Sources */,
 				951CC06B1834AB49008B47FA /* main.m in Sources */,
 				951CC06F1834AB49008B47FA /* uzysAppDelegate.m in Sources */,
 				957BAABF1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */,
+				9299B4E918A28DB4009374B5 /* UZYSCircularProgressActivityIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
