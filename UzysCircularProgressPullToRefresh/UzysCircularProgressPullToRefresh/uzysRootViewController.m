@@ -53,7 +53,6 @@
     [_tableView addPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
-//    [_tableView.pullToRefreshView setActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 
 }
 

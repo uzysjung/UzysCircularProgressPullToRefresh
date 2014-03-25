@@ -15,6 +15,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -23,6 +25,9 @@
     [self.window makeKeyAndVisible];
     
     [[UzysRadialProgressActivityIndicator appearance] setActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [[UzysRadialProgressActivityIndicator appearance] setBorderColor:[UIColor blueColor]];
+    [[UzysRadialProgressActivityIndicator appearance] setSize:CGSizeMake(50, 50)];
+    [[UzysRadialProgressActivityIndicator appearance] setBorderWidth:8];
     
     return YES;
 }
