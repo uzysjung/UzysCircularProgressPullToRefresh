@@ -94,8 +94,10 @@
     self.contentMode = UIViewContentModeRedraw;
     self.state = UZYSPullToRefreshStateNone;
     self.backgroundColor = [UIColor clearColor];
+    self.activityIndicatorStyle = UIActivityIndicatorViewStyleGray;
     //init actitvity indicator
-    _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_activityIndicatorStyle];
     _activityIndicatorView.hidesWhenStopped = YES;
     _activityIndicatorView.frame = self.bounds;
     [self addSubview:_activityIndicatorView];
@@ -393,4 +395,20 @@
     _borderColor = borderColor;
     _shapeLayer.strokeColor = _borderColor.CGColor;
 }
+
+- (void)setActivityIndicatorStyle:(UIActivityIndicatorViewStyle)activityIndicatorStyle
+{
+    _activityIndicatorStyle = activityIndicatorStyle;
+    
+    if (_activityIndicatorView) {
+        
+        [_activityIndicatorView removeFromSuperview];
+        
+        _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_activityIndicatorStyle];
+        _activityIndicatorView.hidesWhenStopped = YES;
+        _activityIndicatorView.frame = self.bounds;
+        [self addSubview:_activityIndicatorView];
+    }
+}
+
 @end

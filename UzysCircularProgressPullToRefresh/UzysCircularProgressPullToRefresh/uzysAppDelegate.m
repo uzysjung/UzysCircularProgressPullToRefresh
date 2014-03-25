@@ -8,6 +8,9 @@
 
 #import "uzysAppDelegate.h"
 #import "uzysRootViewController.h"
+
+#import "UzysRadialProgressActivityIndicator.h"
+
 @implementation uzysAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +21,9 @@
     UINavigationController *navigationController= [[UINavigationController alloc] initWithRootViewController:[[uzysRootViewController alloc] init]];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    [[UzysRadialProgressActivityIndicator appearance] setActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    
     return YES;
 }
 

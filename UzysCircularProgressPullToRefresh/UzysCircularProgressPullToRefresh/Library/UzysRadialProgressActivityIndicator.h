@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
 @property (nonatomic,strong) UIImage *imageIcon;
 @property (nonatomic,strong) UIColor *borderColor;
 @property (nonatomic,assign) CGFloat borderWidth;
+@property (nonatomic,assign) UIActivityIndicatorViewStyle activityIndicatorStyle;
 
 - (void)stopIndicatorAnimation;
 - (void)manuallyTriggered;
