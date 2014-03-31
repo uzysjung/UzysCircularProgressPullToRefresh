@@ -11,7 +11,7 @@
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
-#define PulltoRefreshThreshold 100.0
+#define PulltoRefreshThreshold 80.0
 
 @interface UzysRadialProgressActivityIndicatorBackgroundLayer : CALayer
 
@@ -114,6 +114,7 @@
     imageLayer.contentsScale = [UIScreen mainScreen].scale;
     imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
     imageLayer.contents = (id)self.imageIcon.CGImage;
+    imageLayer.contentsGravity = kCAGravityResizeAspect;
     [self.layer addSublayer:imageLayer];
     self.imageLayer = imageLayer;
     self.imageLayer.transform = CATransform3DMakeRotation(DEGREES_TO_RADIANS(180),0,0,1);
