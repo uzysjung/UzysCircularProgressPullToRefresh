@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 static char UIScrollViewPullToRefreshView;
 
-@implementation UIScrollView (UzysInteractiveIndicator)
+@implementation UIScrollView (UzysCircularProgressPullToRefresh)
 @dynamic pullToRefreshView, showPullToRefresh;
 
 - (void)addPullToRefreshActionHandler:(actionHandler)handler

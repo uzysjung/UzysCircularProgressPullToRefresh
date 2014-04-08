@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UzysRadialProgressActivityIndicator.h"
 
-@interface UIScrollView (UzysInteractiveIndicator)
+@interface UIScrollView (UzysCircularProgressPullToRefresh)
 @property (nonatomic,assign) BOOL showPullToRefresh;
 @property (nonatomic,strong,readonly) UzysRadialProgressActivityIndicator *pullToRefreshView;
 
