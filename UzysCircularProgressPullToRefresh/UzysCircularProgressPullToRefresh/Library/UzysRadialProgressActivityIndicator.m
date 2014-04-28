@@ -255,7 +255,6 @@
     self.progress = ((yOffset+ self.originalTopInset)/-PulltoRefreshThreshold);
     
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
-    NSLog(@"=====>status = %d,  %0.2f %0.2f %0.2f",self.state, self.progress, yOffset, self.originalTopInset);
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
 //            NSLog(@"Stoped");
