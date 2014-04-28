@@ -284,6 +284,12 @@
         case UZYSPullToRefreshStateLoading: //wait until stopIndicatorAnimation
 //            NSLog(@"loading");
             break;
+        case UZYSPullToRefreshStateCanFinish:
+            if(self.progress < 0.01 && self.progress > -0.01)
+            {
+                self.state = UZYSPullToRefreshStateNone;
+            }
+            break;
         default:
             break;
     }
@@ -311,7 +317,7 @@
 
 -(void)actionStopState
 {
-    self.state = UZYSPullToRefreshStateNone;
+    self.state = UZYSPullToRefreshStateCanFinish;
     [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.activityIndicatorView.transform = CGAffineTransformMakeScale(0.1, 0.1);
     } completion:^(BOOL finished) {
