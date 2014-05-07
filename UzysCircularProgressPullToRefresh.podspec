@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "UzysCircularProgressPullToRefresh"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "Give Pinterest Like PullToRefresh to any UIScrollView with just simple code."
   s.author       = { "UzysJung" => "uzysjung@gmail.com" }
 
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license     = { :type => "MIT", :file => "LICENSE" }
   
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/uzysjung/UzysCircularProgressPullToRefresh.git", :tag => "1.0.6" }
+  s.source       = { :git => "https://github.com/uzysjung/UzysCircularProgressPullToRefresh.git", :tag => "1.0.7" }
   s.requires_arc = true
   s.source_files = 'UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library'
   s.resources = ["UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/*.png"]
