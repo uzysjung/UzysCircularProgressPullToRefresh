@@ -11,7 +11,7 @@
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
-#define PulltoRefreshThreshold 100.0
+#define PulltoRefreshThreshold 50.0
 
 @interface UzysRadialProgressActivityIndicatorBackgroundLayer : CALayer
 
@@ -116,6 +116,7 @@
     imageLayer.contentsScale = [UIScreen mainScreen].scale;
     imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
     imageLayer.contents = (id)self.imageIcon.CGImage;
+    imageLayer.contentsGravity = kCAGravityResizeAspect;
     [self.layer addSublayer:imageLayer];
     self.imageLayer = imageLayer;
     self.imageLayer.transform = CATransform3DMakeRotation(DEGREES_TO_RADIANS(180),0,0,1);
@@ -258,11 +259,9 @@
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
-//            NSLog(@"Stoped");
             break;
         case UZYSPullToRefreshStateNone: //detect action
         {
-//            NSLog(@"None");
             if(self.scrollView.isDragging && yOffset <0 )
             {
                 self.state = UZYSPullToRefreshStateTriggering;
@@ -270,36 +269,36 @@
         }
         case UZYSPullToRefreshStateTriggering: //progress
         {
-//            NSLog(@"trigering");
                 if(self.progress >= 1.0)
                     self.state = UZYSPullToRefreshStateTriggered;
         }
             break;
         case UZYSPullToRefreshStateTriggered: //fire actionhandler
-//            NSLog(@"trigered");
             if(self.scrollView.dragging == NO && prevProgress > 0.99)
             {
                 [self actionTriggeredState];
             }
             break;
         case UZYSPullToRefreshStateLoading: //wait until stopIndicatorAnimation
-//            NSLog(@"loading");
+            break;
+        case UZYSPullToRefreshStateCanFinish:
+            if(self.progress < 0.01 && self.progress > -0.01)
+            {
+                self.state = UZYSPullToRefreshStateNone;
+            }
             break;
         default:
             break;
     }
-    //because of iOS6 KVO performance
     prevProgress = self.progress;
     
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     if (self.superview && newSuperview == nil) {
-        //use self.superview, not self.scrollView. Why self.scrollView == nil here?
         UIScrollView *scrollView = (UIScrollView *)self.superview;
         if (scrollView.showPullToRefresh) {
             if (self.isObserving) {
-                //If enter this branch, it is the moment just before "SVPullToRefreshView's dealloc", so remove observer here
                 [scrollView removeObserver:self forKeyPath:@"contentOffset"];
                 [scrollView removeObserver:self forKeyPath:@"contentSize"];
                 [scrollView removeObserver:self forKeyPath:@"frame"];
@@ -312,7 +311,7 @@
 
 -(void)actionStopState
 {
-    self.state = UZYSPullToRefreshStateNone;
+    self.state = UZYSPullToRefreshStateCanFinish;
     [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.activityIndicatorView.transform = CGAffineTransformMakeScale(0.1, 0.1);
     } completion:^(BOOL finished) {

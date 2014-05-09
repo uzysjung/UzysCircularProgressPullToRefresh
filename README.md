@@ -6,12 +6,12 @@ Give Pinterest Like PullToRefresh to any UIScrollView with just simple code
 ![Screenshot](https://raw.github.com/uzysjung/UzysCircularProgressPullToRefresh/master/UzysCircularProgressPulltoRefresh2.gif)
 <!---![Screenshot](https://raw.github.com/uzysjung/UzysCircularProgressPullToRefresh/master/UzysCircularProgressPullToRefresh.gif)--->
 
-**UzysSlideMenu features:**
+**UzysCircularProgressPullToRefresh features:**
 
 * It's very simple to use.
 * Support iOS7.
 * Support only ARC
-* Support CocoaPods. (to be)
+* Support CocoaPods.
 
 ## Installation
 Copy over the files libary folder to your project folder

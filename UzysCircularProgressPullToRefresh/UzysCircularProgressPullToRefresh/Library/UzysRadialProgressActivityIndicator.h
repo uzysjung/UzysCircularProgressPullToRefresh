@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
     UZYSPullToRefreshStateTriggering,
     UZYSPullToRefreshStateTriggered,
     UZYSPullToRefreshStateLoading,
-    
+    UZYSPullToRefreshStateCanFinish,
 };
 
 
