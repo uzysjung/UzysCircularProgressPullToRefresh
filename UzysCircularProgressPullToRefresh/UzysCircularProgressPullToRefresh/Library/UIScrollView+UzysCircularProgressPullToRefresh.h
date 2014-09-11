@@ -14,6 +14,8 @@
 @property (nonatomic,strong,readonly) UzysRadialProgressActivityIndicator *pullToRefreshView;
 
 - (void)addPullToRefreshActionHandler:(actionHandler)handler;
+- (void)addPullToRefreshActionHandler:(actionHandler)handler portraitContentInsetTop:(CGFloat)pInsetTop landscapeInsetTop:(CGFloat)lInsetTop;
+
 - (void)triggerPullToRefresh;
 - (void)stopRefreshAnimation;
 @end

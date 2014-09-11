@@ -13,6 +13,9 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *pData;
 @end
+#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+
+
 #define CELLIDENTIFIER @"CELL"
 @implementation uzysRootViewController
 
@@ -29,12 +32,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setupDataSource];
+//    self.navigationController.navigationBarHidden = YES;
     self.view.backgroundColor = [UIColor lightGrayColor];
+    self.automaticallyAdjustsScrollViewInsets = YES;
+//    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.title = @"UzysCircularProgressPullToRefresh";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELLIDENTIFIER];
     [self.view addSubview:self.tableView];
 }
@@ -70,6 +78,7 @@
     [self.pData addObject:@"1"];
     [self.pData addObject:@"2"];
     [self.pData addObject:@"3"];
+    [self.pData addObject:@"4"];
 
     for(int i=0; i<20; i++)
         [self.pData addObject:[NSDate dateWithTimeIntervalSinceNow:-(i*100)]];
@@ -78,7 +87,7 @@
 - (void)insertRowAtTop {
     __weak typeof(self) weakSelf = self;
     
-    int64_t delayInSeconds = 1.2;
+    int64_t delayInSeconds = 1.8;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [weakSelf.tableView beginUpdates];
@@ -127,6 +136,12 @@
         cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.text = @"Changing borderColor";
     }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] &&[[self.pData objectAtIndex:indexPath.row] isEqualToString:@"4"])
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.text = @"Changing Threshold";
+    }
     else
     {
         NSDate *date = [self.pData objectAtIndex:indexPath.row];
@@ -158,7 +173,12 @@
     {
         [self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
     }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"4"])
+    {
+        [self.tableView.pullToRefreshView setProgressThreshold:25];
+    }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 @end
