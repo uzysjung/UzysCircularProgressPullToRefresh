@@ -12,6 +12,7 @@ Give Pinterest Like PullToRefresh to any UIScrollView with just simple code
 * Support iOS7.
 * Support only ARC
 * Support CocoaPods.
+* Support Orientation change.
 
 ## Installation
 Copy over the files libary folder to your project folder
@@ -63,10 +64,11 @@ adding PullToRefreshActionHandler
 [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
 ```
 
-#### pulling offset change (UzysRadialProgressActivityIndicator.m)
+#### pulling offset change
 ``` objective-c
-#define PulltoRefreshThreshold 100.0
+[self.tableView.pullToRefreshView setProgressThreshold:25];
 ```
+
 
 ## Contact
  - [Uzys.net](http://uzys.net)
