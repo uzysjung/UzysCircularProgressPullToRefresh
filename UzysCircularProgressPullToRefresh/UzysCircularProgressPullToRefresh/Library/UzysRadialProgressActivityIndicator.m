@@ -317,7 +317,7 @@
 -(void)actionStopState
 {
     self.state = UZYSPullToRefreshStateCanFinish;
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState animations:^{
         self.activityIndicatorView.transform = CGAffineTransformMakeScale(0.1, 0.1);
     } completion:^(BOOL finished) {
         self.activityIndicatorView.transform = CGAffineTransformIdentity;
@@ -333,7 +333,7 @@
 {
     self.state = UZYSPullToRefreshStateLoading;
     
-    [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
+    [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState animations:^{
         [self setLayerOpacity:0.0];
     } completion:^(BOOL finished) {
         [self setLayerHidden:YES];
