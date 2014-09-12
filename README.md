@@ -46,7 +46,7 @@ adding PullToRefreshActionHandler
 [_tableView stopRefreshAnimation];
 ```
 
-### support customization
+### support customization 
 #### size change
 ``` objective-c
 [self.tableView.pullToRefreshView setSize:CGSizeMake(40, 40)];
@@ -69,6 +69,12 @@ adding PullToRefreshActionHandler
 [self.tableView.pullToRefreshView setProgressThreshold:25];
 ```
 
+#### set LandScape Inset , Portrait Inset at Each Orientation.
+``` objective-c
+[self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52]; 
+// iOS 7 LandScape Navigationbar size 52 , Portrait Navigationbar size 64  
+```
+must call these customization methods after calling 'addPullToRefreshActionHandler'
 
 ## Contact
  - [Uzys.net](http://uzys.net)
