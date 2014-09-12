@@ -21,8 +21,8 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
 @interface UzysRadialProgressActivityIndicator : UIView
 
 @property (nonatomic,assign) BOOL isObserving;
-@property (nonatomic,assign) CGFloat originalTopInset;
 
+@property (nonatomic,assign) CGFloat originalTopInset;
 @property (nonatomic,assign) CGFloat landscapeTopInset;
 @property (nonatomic,assign) CGFloat portraitTopInset;
 

@@ -33,7 +33,8 @@
 	// Do any additional setup after loading the view.
     [self setupDataSource];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    self.automaticallyAdjustsScrollViewInsets = YES;
+    if(IS_IOS7)
+        self.automaticallyAdjustsScrollViewInsets = YES;
     self.title = @"UzysCircularProgressPullToRefresh";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -60,7 +61,8 @@
     [_tableView addPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
-    [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52];
+    if(IS_IOS7)
+        [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52];
 
 
 }

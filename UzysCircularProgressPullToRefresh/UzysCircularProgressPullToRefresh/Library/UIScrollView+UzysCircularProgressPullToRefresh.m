@@ -46,15 +46,7 @@ static char UIScrollViewPullToRefreshView;
                     view.landscapeTopInset = 52.0;
                 }
             }
-            else
-            {
-                if(cEqualFloats(self.contentInset.top, 44.00, cDefaultFloatComparisonEpsilon))
-                {
-                    view.portraitTopInset = 44.0;
-                    view.landscapeTopInset = 32.0;
-                }
-                
-            }
+
         }
         else //DEFINE LANDSCAPE PORTRAIT INSET
         {
@@ -136,12 +128,12 @@ static char UIScrollViewPullToRefreshView;
     dispatch_async(dispatch_get_main_queue(), ^{
         if(UIDeviceOrientationIsLandscape(device.orientation))
         {
-            if(self.pullToRefreshView.landscapeTopInset> 0.0)
+            if(cNotEqualFloats( self.pullToRefreshView.landscapeTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
                 self.pullToRefreshView.originalTopInset = self.pullToRefreshView.landscapeTopInset;
         }
         else
         {
-            if(self.pullToRefreshView.portraitTopInset> 0.0)
+            if(cNotEqualFloats( self.pullToRefreshView.portraitTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
                 self.pullToRefreshView.originalTopInset = self.pullToRefreshView.portraitTopInset;
         }
         [self.pullToRefreshView setSize:self.pullToRefreshView.frame.size];
