@@ -32,16 +32,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setupDataSource];
-//    self.navigationController.navigationBarHidden = YES;
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.automaticallyAdjustsScrollViewInsets = YES;
-//    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.title = @"UzysCircularProgressPullToRefresh";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELLIDENTIFIER];
     [self.view addSubview:self.tableView];
@@ -61,6 +60,8 @@
     [_tableView addPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
+    [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52];
+
 
 }
 

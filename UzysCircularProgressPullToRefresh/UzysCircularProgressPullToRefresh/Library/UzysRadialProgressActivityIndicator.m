@@ -169,7 +169,7 @@
 {
     [UIView animateWithDuration:0.3
                           delay:0
-                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState
+                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionLayoutSubviews
                      animations:^{
                          self.scrollView.contentInset = contentInset;
                      }

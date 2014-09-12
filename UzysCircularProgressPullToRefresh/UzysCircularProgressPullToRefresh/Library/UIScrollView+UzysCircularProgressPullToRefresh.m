@@ -8,6 +8,11 @@
 
 #import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 #import <objc/runtime.h>
+#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+#define cDefaultFloatComparisonEpsilon    0.001
+#define cEqualFloats(f1, f2, epsilon)    ( fabs( (f1) - (f2) ) < epsilon )
+#define cNotEqualFloats(f1, f2, epsilon)    ( !cEqualFloats(f1, f2, epsilon) )
+
 static char UIScrollViewPullToRefreshView;
 
 @implementation UIScrollView (UzysCircularProgressPullToRefresh)
@@ -17,21 +22,7 @@ static char UIScrollViewPullToRefreshView;
 {
     if(self.pullToRefreshView == nil)
     {
-        UzysRadialProgressActivityIndicator *view = [[UzysRadialProgressActivityIndicator alloc] initWithImage:[UIImage imageNamed:@"centerIcon"]];
-        view.pullToRefreshHandler = handler;
-        view.scrollView = self;
-        view.frame = CGRectMake((self.bounds.size.width - view.bounds.size.width)/2,
-                                -view.bounds.size.height, view.bounds.size.width, view.bounds.size.height);
-        view.originalTopInset = self.contentInset.top;
-        if(self.contentInset.top <64.001 && self.contentInset.top > 63.999)
-        {
-            view.portraitTopInset = 64.0;
-            view.landscapeTopInset = 52.0;
-        }
-        [self addSubview:view];
-        [self sendSubviewToBack:view];
-        self.pullToRefreshView = view;
-        self.showPullToRefresh = YES;
+        [self addPullToRefreshActionHandler:handler portraitContentInsetTop:CGFLOAT_MAX landscapeInsetTop:CGFLOAT_MAX];
     }
 }
 - (void)addPullToRefreshActionHandler:(actionHandler)handler portraitContentInsetTop:(CGFloat)pInsetTop landscapeInsetTop:(CGFloat)lInsetTop
@@ -44,8 +35,33 @@ static char UIScrollViewPullToRefreshView;
         view.frame = CGRectMake((self.bounds.size.width - view.bounds.size.width)/2,
                                 -view.bounds.size.height, view.bounds.size.width, view.bounds.size.height);
         view.originalTopInset = self.contentInset.top;
-        view.portraitTopInset = pInsetTop;
-        view.landscapeTopInset = lInsetTop;
+        
+        if(cEqualFloats(pInsetTop, CGFLOAT_MAX, cDefaultFloatComparisonEpsilon) && cEqualFloats(lInsetTop, CGFLOAT_MAX, cDefaultFloatComparisonEpsilon)) //NOT DEFINE LANDSCAPE , PORTRAIT INSET
+        {
+            if(IS_IOS7)
+            {
+                if(cEqualFloats(self.contentInset.top, 64.00, cDefaultFloatComparisonEpsilon))
+                {
+                    view.portraitTopInset = 64.0;
+                    view.landscapeTopInset = 52.0;
+                }
+            }
+            else
+            {
+                if(cEqualFloats(self.contentInset.top, 44.00, cDefaultFloatComparisonEpsilon))
+                {
+                    view.portraitTopInset = 44.0;
+                    view.landscapeTopInset = 32.0;
+                }
+                
+            }
+        }
+        else //DEFINE LANDSCAPE PORTRAIT INSET
+        {
+            view.portraitTopInset = pInsetTop;
+            view.landscapeTopInset = lInsetTop;
+        }
+        
         [self addSubview:view];
         [self sendSubviewToBack:view];
         self.pullToRefreshView = view;
@@ -62,6 +78,11 @@ static char UIScrollViewPullToRefreshView;
     [self.pullToRefreshView stopIndicatorAnimation];
 }
 #pragma mark - property
+- (void)addTopInsetInPortrait:(CGFloat)pInset TopInsetInLandscape:(CGFloat)lInset
+{
+    self.pullToRefreshView.portraitTopInset = pInset;
+    self.pullToRefreshView.landscapeTopInset = lInset;
+}
 - (void)setPullToRefreshView:(UzysRadialProgressActivityIndicator *)pullToRefreshView
 {
     [self willChangeValueForKey:@"UzysRadialProgressActivityIndicator"];
@@ -80,7 +101,6 @@ static char UIScrollViewPullToRefreshView;
     {
         if(!self.pullToRefreshView.isObserving)
         {
-//            [self addObserver:self.pullToRefreshView forKeyPath:@"contentInset" options:NSKeyValueObservingOptionNew context:nil];
             [self addObserver:self.pullToRefreshView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
             [self addObserver:self.pullToRefreshView forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
             [self addObserver:self.pullToRefreshView forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
@@ -94,7 +114,6 @@ static char UIScrollViewPullToRefreshView;
     {
         if(self.pullToRefreshView.isObserving)
         {
-//            [self removeObserver:self.pullToRefreshView forKeyPath:@"contentInset"];
             [self removeObserver:self.pullToRefreshView forKeyPath:@"contentOffset"];
             [self removeObserver:self.pullToRefreshView forKeyPath:@"contentSize"];
             [self removeObserver:self.pullToRefreshView forKeyPath:@"frame"];
