@@ -8,7 +8,10 @@
 
 #import "UIScrollView+UzysCircularProgressPullToRefresh.h"
 #import <objc/runtime.h>
-#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1 && floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1)
+#define IS_IOS8  ([[[UIDevice currentDevice] systemVersion] compare:@"8" options:NSNumericSearch] != NSOrderedAscending)
+#define IS_IPHONE6PLUS ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [[UIScreen mainScreen] nativeScale] == 3.0f)
+
 #define cDefaultFloatComparisonEpsilon    0.001
 #define cEqualFloats(f1, f2, epsilon)    ( fabs( (f1) - (f2) ) < epsilon )
 #define cNotEqualFloats(f1, f2, epsilon)    ( !cEqualFloats(f1, f2, epsilon) )
@@ -40,13 +43,25 @@ static char UIScrollViewPullToRefreshView;
         {
             if(IS_IOS7)
             {
-                if(cEqualFloats(self.contentInset.top, 64.00, cDefaultFloatComparisonEpsilon))
+                if(cEqualFloats(self.contentInset.top, 64.00, cDefaultFloatComparisonEpsilon) && cEqualFloats(self.frame.origin.y, 0.0, cDefaultFloatComparisonEpsilon))
                 {
                     view.portraitTopInset = 64.0;
                     view.landscapeTopInset = 52.0;
                 }
             }
-
+            else if(IS_IOS8)
+            {
+                if(cEqualFloats(self.contentInset.top, 0.00, cDefaultFloatComparisonEpsilon) &&cEqualFloats(self.frame.origin.y, 0.0, cDefaultFloatComparisonEpsilon))
+                {
+                    view.originalTopInset = view.portraitTopInset = 64.0;
+                    
+                    if(IS_IPHONE6PLUS)
+                        view.landscapeTopInset = 44.0;
+                    else
+                        view.landscapeTopInset = 32.0;
+                    
+                }
+            }
         }
         else //DEFINE LANDSCAPE PORTRAIT INSET
         {

@@ -13,7 +13,9 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *pData;
 @end
-#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1 && floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1)
+#define IS_IOS8  ([[[UIDevice currentDevice] systemVersion] compare:@"8" options:NSNumericSearch] != NSOrderedAscending)
+#define IS_IPHONE6PLUS ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [[UIScreen mainScreen] nativeScale] == 3.0f)
 
 
 #define CELLIDENTIFIER @"CELL"
@@ -33,7 +35,7 @@
 	// Do any additional setup after loading the view.
     [self setupDataSource];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    if(IS_IOS7)
+    if(IS_IOS7 || IS_IOS8)
         self.automaticallyAdjustsScrollViewInsets = YES;
     self.title = @"UzysCircularProgressPullToRefresh";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -55,16 +57,23 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    __weak typeof(self) weakSelf =self;
-
+     __weak typeof(self) weakSelf =self;
     //Because of self.automaticallyAdjustsScrollViewInsets you must add code below in viewWillApper
     [_tableView addPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
+
+    // If you did not change scrollview inset, you don't need code below.
     if(IS_IOS7)
         [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52];
-
-
+    else if(IS_IOS8)
+    {
+        CGFloat landscapeTopInset = 32.0;
+        if(IS_IPHONE6PLUS)
+            landscapeTopInset = 44.0;
+        [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:landscapeTopInset];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

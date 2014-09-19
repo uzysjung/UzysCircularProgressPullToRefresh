@@ -11,7 +11,7 @@
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
-#define PulltoRefreshThreshold 50.0
+#define PulltoRefreshThreshold 60.0
 #define StartPosition 5.0
 @interface UzysRadialProgressActivityIndicatorBackgroundLayer : CALayer
 

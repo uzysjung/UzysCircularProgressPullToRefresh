@@ -19,6 +19,7 @@
 		951CC07A1834AB49008B47FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951CC0621834AB49008B47FA /* UIKit.framework */; };
 		951CC0821834AB49008B47FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951CC0801834AB49008B47FA /* InfoPlist.strings */; };
 		951CC0841834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 951CC0831834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m */; };
+		956DFDBF19CBCC54002FDFED /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956DFDBE19CBCC54002FDFED /* Launch Screen.xib */; };
 		957BAAB71834C8EF009A8358 /* uzysRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAAB61834C8EF009A8358 /* uzysRootViewController.m */; };
 		957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 957BAAB91834C92F009A8358 /* centerIcon@2x.png */; };
 		957BAABF1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BAABB1834C92F009A8358 /* UIScrollView+UzysCircularProgressPullToRefresh.m */; };
@@ -53,6 +54,7 @@
 		951CC07F1834AB49008B47FA /* UzysCircularProgressPullToRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UzysCircularProgressPullToRefreshTests-Info.plist"; sourceTree = "<group>"; };
 		951CC0811834AB49008B47FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		951CC0831834AB49008B47FA /* UzysCircularProgressPullToRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UzysCircularProgressPullToRefreshTests.m; sourceTree = "<group>"; };
+		956DFDBE19CBCC54002FDFED /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		957BAAB51834C8EF009A8358 /* uzysRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uzysRootViewController.h; sourceTree = "<group>"; };
 		957BAAB61834C8EF009A8358 /* uzysRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uzysRootViewController.m; sourceTree = "<group>"; };
 		957BAAB91834C92F009A8358 /* centerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "centerIcon@2x.png"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		951CC0521834AB49008B47FA = {
 			isa = PBXGroup;
 			children = (
+				956DFDBE19CBCC54002FDFED /* Launch Screen.xib */,
 				951CC0641834AB49008B47FA /* UzysCircularProgressPullToRefresh */,
 				951CC07D1834AB49008B47FA /* UzysCircularProgressPullToRefreshTests */,
 				951CC05D1834AB49008B47FA /* Frameworks */,
@@ -218,7 +221,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = uzys;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Uzysjung;
 				TargetAttributes = {
 					951CC0751834AB49008B47FA = {
@@ -253,6 +256,7 @@
 				951CC0711834AB49008B47FA /* Images.xcassets in Resources */,
 				95E79A311848820300CDB0D1 /* thunderbird@2x.png in Resources */,
 				957BAABE1834C92F009A8358 /* centerIcon@2x.png in Resources */,
+				956DFDBF19CBCC54002FDFED /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +325,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -360,7 +363,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -420,7 +422,6 @@
 		951CC08B1834AB49008B47FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -443,7 +444,6 @@
 		951CC08C1834AB49008B47FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
