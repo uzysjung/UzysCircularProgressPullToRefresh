@@ -73,7 +73,7 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 
 @interface UZYSCircularProgressActivityIndicator ()
 
-@property (assign, nonatomic) BOOL updatingScrollViewInsets, updatingScrollViewOffset;
+@property (assign, nonatomic) BOOL updatingScrollViewInsets, updatingScrollViewOffset, isObserving;
 
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicatorView;
 @property (strong, nonatomic) UZYSRadialProgressActivityIndicatorBackgroundLayer *backgroundLayer;
@@ -541,6 +541,8 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 	
     if(self.superview && newSuperview == nil)
 	{
+        [self removeObservers];
+        
         if(self.scrollView.showsPullToRefreshView)
 		{
 			self.scrollView.pullToRefreshView = nil;
@@ -550,18 +552,28 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 
 - (void)addObservers
 {
-	[self.scrollView addObserver:self forKeyPath:@"contentInset" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
-	[self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
-	[self.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
-	[self.scrollView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+    if(!self.isObserving)
+    {
+        [self.scrollView addObserver:self forKeyPath:@"contentInset" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        [self.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        [self.scrollView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        
+        self.isObserving = YES;
+    }
 }
 
 - (void)removeObservers
 {
-	[self.scrollView removeObserver:self forKeyPath:@"contentInset" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
-	[self.scrollView removeObserver:self forKeyPath:@"contentOffset" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
-	[self.scrollView removeObserver:self forKeyPath:@"contentSize" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
-	[self.scrollView removeObserver:self forKeyPath:@"frame" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+    if(self.isObserving)
+    {
+        [self.scrollView removeObserver:self forKeyPath:@"contentInset" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        [self.scrollView removeObserver:self forKeyPath:@"contentOffset" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        [self.scrollView removeObserver:self forKeyPath:@"contentSize" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        [self.scrollView removeObserver:self forKeyPath:@"frame" context:&KVOUZYSRadialProgressActivityIndicatorObserving];
+        
+        self.isObserving = NO;
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
