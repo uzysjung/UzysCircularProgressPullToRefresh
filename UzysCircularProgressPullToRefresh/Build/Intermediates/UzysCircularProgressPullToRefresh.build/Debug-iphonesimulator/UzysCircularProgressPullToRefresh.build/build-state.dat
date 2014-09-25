@@ -1,0 +1,781 @@
+TUzysCircularProgressPullToRefresh
+v6
+r1
+cCheck dependencies
+cProcessPCH /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh normal x86_64
+cCopyStringsFile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj/InfoPlist.strings UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings
+cCpResource UzysCircularProgressPullToRefresh/thunderbird@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png
+cCpResource UzysCircularProgressPullToRefresh/Library/centerIcon@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png
+cCompileAssetCatalog /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Images.xcassets
+cProcessInfoPlistFile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist
+cGenerateDSYMFile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh
+cTouch /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
+c0000000053119F8A0000000000000198
+t1393663882
+s408
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist
+c00000000531F0F0000000000000003B4
+t1394544384
+s948
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000531F0F05000000000000019E
+t1394544389
+s414
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000531F0F07000000000058E0E0
+t1394544391
+s5824736
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c00000000531F0F0700000000005B82F0
+t1394544391
+s5997296
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000531F0F070000000000446820
+t1394544391
+s4483104
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+c00000000531F0F0700000000003599D0
+t1394544391
+s3512784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+c00000000531F0F0800000000002FC3B0
+t1394544392
+s3130288
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c00000000531F0F08000000000004B000
+t1394544392
+s307200
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000531F0F08000000000088D8C0
+t1394544392
+s8968384
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c00000000531F0F0A0000000000037680
+t1394544394
+s226944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c00000000531F0F0A000000000048F720
+t1394544394
+s4781856
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Security.framework/Security
+c00000000531F0F0A000000000013FD70
+t1394544394
+s1310064
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000531F0F0D0000000001F1DE10
+t1394544397
+s32628240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+c00000000531F0F1700000000002BC360
+t1394544407
+s2868064
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
+c00000000531F0F1C0000000000002338
+t1394544412
+s9016
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
+c00000000531F0F1D000000000008D370
+t1394544413
+s578416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
+c00000000531F0F1D0000000000392E20
+t1394544413
+s3747360
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
+c000000005314675900000000000141F0
+t1393846105
+s82416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
+c00000000531F0F1D0000000000014A80
+t1394544413
+s84608
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+c00000000531F0F1D0000000000033BA0
+t1394544413
+s211872
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+c00000000531F0F1D000000000001CFB0
+t1394544413
+s118704
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
+c00000000531F0F1D000000000001B2B0
+t1394544413
+s111280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
+c00000000531F0F1D00000000000C9570
+t1394544413
+s824688
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
+c00000000531F0F1D0000000000063280
+t1394544413
+s406144
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
+c00000000531F0F1D0000000000008880
+t1394544413
+s34944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
+c00000000531F0F1D0000000000015080
+t1394544413
+s86144
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
+c00000000531F0F1D00000000000230F0
+t1394544413
+s143600
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
+c00000000531F0F1D000000000000E380
+t1394544413
+s58240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
+c00000000531F0F1D0000000000089380
+t1394544413
+s562048
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
+c00000000531F0F1D0000000000017320
+t1394544413
+s95008
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
+c00000000531F0F1D0000000000039CD0
+t1394544413
+s236752
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+c00000000531F0F1D000000000000B0B0
+t1394544413
+s45232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
+c00000000531F0F1D0000000000167E80
+t1394544413
+s1474176
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+c00000000531F0F1D00000000000106A0
+t1394544413
+s67232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+c00000000531F0F1D000000000001CE40
+t1394544413
+s118336
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
+c00000000531F0F1D00000000000740C0
+t1394544413
+s475328
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
+c00000000531F0F1D000000000006CA60
+t1394544413
+s445024
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
+c00000000531F0F1D000000000001BAD0
+t1394544413
+s113360
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
+c00000000531F0F1D0000000000084A20
+t1394544413
+s543264
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000531F0F460000000000000ADC
+t1394544454
+s2780
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+c00000000531F0F46000000000000514C
+t1394544454
+s20812
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch
+t1395747801
+s118252
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o
+t1395748684
+s52224
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysCircularProgressPullToRefresh.LinkFileList
+c0000000053316BD80000000000000543
+t1395747800
+s1347
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o
+t1395748684
+s135160
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o
+t1395747801
+s4000
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o
+t1395751869
+s73828
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o
+t1395751823
+s99164
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_dependencies.txt
+t1395747802
+s668
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_generated_info.plist
+t1395747802
+s585
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app
+t1395751869
+s340
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM
+t1395751823
+s102
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist
+t1395747802
+s1105
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/PkgInfo
+t1395747802
+s8
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh
+t1395751869
+s115656
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png
+t1395747801
+s1067
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj/InfoPlist.strings
+t1395747801
+s42
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png
+t1395747801
+s17123
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Images.xcassets
+c0000000053316AA90000000000000088
+t1395747497
+s136
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.h
+c0000000053316C200000000000000250
+t1395747872
+s592
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m
+c0000000053316AA90000000000000B9B
+t1395747497
+s2971
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h
+c0000000053316F4C00000000000004AD
+t1395748684
+s1197
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m
+c0000000053316F3900000000000039A7
+t1395748665
+s14759
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/centerIcon@2x.png
+c0000000053316AA9000000000000042B
+t1395747497
+s1067
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist
+c0000000053316AA90000000000000491
+t1395747497
+s1169
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch
+c0000000053316AA90000000000000158
+t1395747497
+s344
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings
+c0000000053316AA9000000000000002D
+t1395747497
+s45
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m
+c0000000053316AA90000000000000176
+t1395747497
+s374
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/thunderbird@2x.png
+c0000000053316AA900000000000042E3
+t1395747497
+s17123
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.h
+c0000000053316AA9000000000000013A
+t1395747497
+s314
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m
+c0000000053317BBD0000000000000B47
+t1395751869
+s2887
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.h
+c0000000053316AA90000000000000104
+t1395747497
+s260
+
+N/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m
+c0000000053317B8F0000000000001995
+t1395751823
+s6549
+
+N/usr/lib/libSystem.B.dylib
+c0000000052580C36000000000000E6D0
+t1381502006
+s59088
+
+N/usr/lib/system/libcache.dylib
+c0000000052580C460000000000012A00
+t1381502022
+s76288
+
+N/usr/lib/system/libcommonCrypto.dylib
+c0000000052580C29000000000002E320
+t1381501993
+s189216
+
+N/usr/lib/system/libcompiler_rt.dylib
+c0000000052580C360000000000021860
+t1381502006
+s137312
+
+N/usr/lib/system/libcopyfile.dylib
+c0000000052580C46000000000001B620
+t1381502022
+s112160
+
+N/usr/lib/system/libcorecrypto.dylib
+c0000000052580C4600000000000BD920
+t1381502022
+s776480
+
+N/usr/lib/system/libkeymgr.dylib
+c0000000052580C46000000000000A120
+t1381502022
+s41248
+
+N/usr/lib/system/liblaunch.dylib
+c0000000053146759000000000001D550
+t1393846105
+s120144
+
+N/usr/lib/system/libmacho.dylib
+c0000000052580C450000000000014EE0
+t1381502021
+s85728
+
+N/usr/lib/system/libquarantine.dylib
+c0000000052580C480000000000010380
+t1381502024
+s66432
+
+N/usr/lib/system/libremovefile.dylib
+c0000000052580C48000000000000C4C0
+t1381502024
+s50368
+
+N/usr/lib/system/libsystem_asl.dylib
+c0000000052580C4600000000000357A0
+t1381502022
+s219040
+
+N/usr/lib/system/libsystem_blocks.dylib
+c0000000052580C46000000000000C070
+t1381502022
+s49264
+
+N/usr/lib/system/libsystem_c.dylib
+c00000000530299D10000000000168D00
+t1392679377
+s1477888
+
+N/usr/lib/system/libsystem_configuration.dylib
+c00000000531467590000000000010630
+t1393846105
+s67120
+
+N/usr/lib/system/libsystem_dnssd.dylib
+c0000000053146759000000000001DF10
+t1393846105
+s122640
+
+N/usr/lib/system/libsystem_info.dylib
+c0000000052580C360000000000075B00
+t1381502006
+s482048
+
+N/usr/lib/system/libsystem_kernel.dylib
+c00000000530299D0000000000007CCE0
+t1392679376
+s511200
+
+N/usr/lib/system/libsystem_m.dylib
+c0000000052580C3600000000000766C0
+t1381502006
+s485056
+
+N/usr/lib/system/libsystem_malloc.dylib
+c00000000530299D00000000000044DC0
+t1392679376
+s282048
+
+N/usr/lib/system/libsystem_notify.dylib
+c0000000052580C360000000000021FA0
+t1381502006
+s139168
+
+N/usr/lib/system/libsystem_platform.dylib
+c0000000053146759000000000002D920
+t1393846105
+s186656
+
+N/usr/lib/system/libsystem_pthread.dylib
+c0000000052580C47000000000001E570
+t1381502023
+s124272
+
+N/usr/lib/system/libsystem_sandbox.dylib
+c0000000053146759000000000000CC70
+t1393846105
+s52336
+
+N/usr/lib/system/libsystem_stats.dylib
+c00000000531467590000000000009A80
+t1393846105
+s39552
+
+N/usr/lib/system/libunc.dylib
+c0000000052580C41000000000000C3F0
+t1381502017
+s50160
+
+N/usr/lib/system/libunwind.dylib
+c0000000052580C4700000000000199F0
+t1381502023
+s104944
+
+CBuild AST from /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m
+r0
+
+CBuild AST from /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m
+r0
+
+CBuild AST from /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m
+r0
+
+CBuild AST from /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m
+r0
+
+CBuild AST from /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies60cdd13db3e1b841^3bc5da3db3e1b841^---0#1#1#--18"Check dependencies36"E2733D70-7CC9-439F-A76A-0DF9E0D380B4-
+
+CCompileAssetCatalog /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Images.xcassets
+s417440601.998191
+e417440602.087458
+r1
+xCompileAssetCatalog
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/LaunchImage-700-568h@2x.png
+o/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/LaunchImage-568h@2x.png
+o/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"CompileAssetCatalog Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app UzysCircularProgressPullToRefresh/Images.xcassets144"CompileAssetCatalog Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app UzysCircularProgressPullToRefresh/Images.xcassets5a9eff59a3e1b841^2c64165aa3e1b841^-696"/* com.apple.actool.compilation-results *//Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/LaunchImage-700-568h@2x.png/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/LaunchImage-568h@2x.png/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@157"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Images.xcassets/0000000000000000^1647"CompileAssetCatalog Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app UzysCircularProgressPullToRefresh/Images.xcassets    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphonesimulator --minimum-deployment-target 6.0 --target-device iphone --compress-pngs --compile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Images.xcassets36"97550A3D-E71C-433A-8D3D-71F12779033F-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s417441484.505186
+e417441484.602918
+r1
+xCompileC
+xBuild/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.h
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection196"Compile /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m362"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler236b81cca6e1b841^365a9acca6e1b841^---0#0#1#-19%DVTDocumentLocation2@197"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m0000000000000000^5449"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Albert/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-generated-files.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-own-target-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-all-target-headers.hmap -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-project-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources/x86_64 -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -include /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch -MMD -MT dependencies -MF /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.d --serialize-diagnostics /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.dia -c /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.m -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o36"F1324CBE-21F2-4FB0-ACC9-C74D7C633DDD-
+bA7692818-970F-41F4-AC6D-AD1A0137BCA5
+
+CCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s417441484.503183
+e417441484.644956
+r1
+xCompileC
+xBuild/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection185"Compile /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m340"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler41f480cca6e1b841^8f1ca5cca6e1b841^---0#0#1#-19%DVTDocumentLocation2@186"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m0000000000000000^5383"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Albert/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-generated-files.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-own-target-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-all-target-headers.hmap -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-project-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources/x86_64 -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -include /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch -MMD -MT dependencies -MF /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.d --serialize-diagnostics /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.dia -c /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o36"08CB93DE-457D-49AD-8D49-76E2ADBAAD50-
+bA7692818-970F-41F4-AC6D-AD1A0137BCA5
+
+CCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s417440601.830462
+e417440601.866892
+r1
+xCompileC
+xBuild/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection146"Compile /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m270"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o UzysCircularProgressPullToRefresh/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler21e4d459a3e1b841^29eddd59a3e1b841^---0#0#1#-19%DVTDocumentLocation2@147"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m0000000000000000^5181"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o UzysCircularProgressPullToRefresh/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Albert/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-generated-files.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-own-target-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-all-target-headers.hmap -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-project-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources/x86_64 -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -include /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch -MMD -MT dependencies -MF /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.dia -c /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/main.m -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o36"C2E2D02E-7FCF-431E-93CA-D1DA16A0AD6B-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s417444669.856322
+e417444669.940776
+r1
+xCompileC
+xBuild/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.h
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.h
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection157"Compile /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m292"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o UzysCircularProgressPullToRefresh/uzysAppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler3c50db3db3e1b841^8cd7f03db3e1b841^---0#0#1#-19%DVTDocumentLocation2@158"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m0000000000000000^5247"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o UzysCircularProgressPullToRefresh/uzysAppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Albert/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-generated-files.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-own-target-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-all-target-headers.hmap -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-project-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources/x86_64 -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -include /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch -MMD -MT dependencies -MF /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.d --serialize-diagnostics /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.dia -c /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysAppDelegate.m -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o36"B7FA0D28-85CA-4761-91F9-5988246B6549-
+bDD492961-1AE0-4E2C-BAE3-A4DDF172299F
+
+CCompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s417444623.439759
+e417444623.610313
+r1
+xCompileC
+xBuild/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.h
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.h
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection164"Compile /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m306"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o UzysCircularProgressPullToRefresh/uzysRootViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler03b5700fb3e1b841^ff3d9c0fb3e1b841^---0#0#1#-19%DVTDocumentLocation2@165"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m0000000000000000^5289"CompileC Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o UzysCircularProgressPullToRefresh/uzysRootViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Albert/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-generated-files.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-own-target-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-all-target-headers.hmap -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-project-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources/x86_64 -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -include /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch -MMD -MT dependencies -MF /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.d --serialize-diagnostics /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.dia -c /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o36"F92C9627-B19A-4763-8286-147408B59ED1-
+b9FC4B1FC-EBB2-4104-8158-AE3D3A570EDA
+
+CCopyStringsFile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj/InfoPlist.strings UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings
+s417440601.996935
+e417440601.998237
+r1
+xCopyStringsFile
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj/InfoPlist.strings
+xUzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Copy UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings178"CopyStringsFile Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj/InfoPlist.strings UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings9946ff59a3e1b841^4390ff59a3e1b841^---0#0#1#-19%DVTDocumentLocation2@167"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings0000000000000000^818"CopyStringsFile Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj/InfoPlist.strings UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/en.lproj -- UzysCircularProgressPullToRefresh/en.lproj/InfoPlist.strings36"3D139D21-55D0-4111-B4D1-8FA257CE2AF8-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CCpResource UzysCircularProgressPullToRefresh/Library/centerIcon@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png
+s417440601.997309
+e417440601.998666
+r1
+xCpResource
+xUzysCircularProgressPullToRefresh/Library/centerIcon@2x.png
+xBuild/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Copy Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png163"CpResource UzysCircularProgressPullToRefresh/Library/centerIcon@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png2d5fff59a3e1b841^3facff59a3e1b841^---0#0#1#-19%DVTDocumentLocation2@199"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png0034ec40ddffdf42^911"CpResource UzysCircularProgressPullToRefresh/Library/centerIcon@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/centerIcon@2x.png    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/centerIcon@2x.png /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app36"15A4BFEA-93F8-42FC-95EA-29FEE83617D5-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CCpResource UzysCircularProgressPullToRefresh/thunderbird@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png
+s417440601.997077
+e417440601.998627
+r1
+xCpResource
+xUzysCircularProgressPullToRefresh/thunderbird@2x.png
+xBuild/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Copy Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png157"CpResource UzysCircularProgressPullToRefresh/thunderbird@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png6552ff59a3e1b841^fca7ff59a3e1b841^---0#0#1#-19%DVTDocumentLocation2@200"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png0034ec40ddffdf42^898"CpResource UzysCircularProgressPullToRefresh/thunderbird@2x.png Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/thunderbird@2x.png    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/thunderbird@2x.png /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app36"36A88A72-0B30-4100-994E-A243D15C458E-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CGenerateDSYMFile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh
+s417444669.976574
+e417444669.995653
+r1
+xGenerateDSYMFile
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection186"Generate /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM205"GenerateDSYMFile Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh730efa3db3e1b841^e7e3fe3db3e1b841^---0#0#1#-19%DVTDocumentLocation2@187"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM/0000000000000000^998"GenerateDSYMFile Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app.dSYM36"57D30F00-B1E7-4401-BBA2-0CDCBB4899BE-
+bDD492961-1AE0-4E2C-BAE3-A4DDF172299F
+
+CLd /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh normal x86_64
+s417444669.942509
+e417444669.974784
+r1
+xLd
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh
+xnormal
+xx86_64
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysCircularProgressPullToRefresh.LinkFileList
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysRadialProgressActivityIndicator.o
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysRootViewController.o
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/main.o
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/uzysAppDelegate.o
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UIScrollView+UzysCircularProgressPullToRefresh.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Security.framework/Security
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libcorecrypto.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_asl.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_configuration.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_malloc.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_platform.dylib
+d/usr/lib/system/libsystem_pthread.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libsystem_stats.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection211"Link /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh125"Ld Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh normal x86_64c559f13db3e1b841^2a8cf93db3e1b841^---0#0#1#--2018"Ld Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh normal x86_64    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export IPHONEOS_DEPLOYMENT_TARGET=6.0    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator -filelist /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysCircularProgressPullToRefresh.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 -framework CoreGraphics -framework UIKit -framework Foundation -Xlinker -dependency_info -Xlinker /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/Objects-normal/x86_64/UzysCircularProgressPullToRefresh_dependency_info.dat -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/UzysCircularProgressPullToRefresh36"1EAD7A91-4C7A-4D7D-BEE4-225BFCC5C1B4-
+bDD492961-1AE0-4E2C-BAE3-A4DDF172299F
+
+CProcessInfoPlistFile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist
+s417440602.088031
+e417440602.089673
+r1
+xProcessInfoPlistFile
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection184"Process /Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist185"ProcessInfoPlistFile Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist4698165aa3e1b841^fdf5165aa3e1b841^---0#0#1#-19%DVTDocumentLocation2@185"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist0000000000000000^1417"ProcessInfoPlistFile Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Info.plist -genpkginfo /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/assetcatalog_generated_info.plist -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app/Info.plist36"BE3DFB52-C2DB-494D-B42C-2E0251B8971A-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CProcessPCH /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s417440600.376492
+e417440601.827422
+r1
+xProcessPCH
+x/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch
+xUzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Precompile UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch317"ProcessPCH Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler92796058a3e1b841^95d2d359a3e1b841^---0#0#1#-19%DVTDocumentLocation2@185"file:///Users/Albert/Github%20Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch0000000000000000^5028"ProcessPCH Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Albert/Github Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Albert/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-generated-files.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-own-target-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-all-target-headers.hmap -iquote /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/UzysCircularProgressPullToRefresh-project-headers.hmap -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources/x86_64 -I/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/UzysCircularProgressPullToRefresh.build/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.build/DerivedSources -F/Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator --serialize-diagnostics /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.dia -MMD -MT dependencies -MF /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.d -c /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch -o /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Intermediates/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-alymlfxycjhscahamfjwrtuskmhx/UzysCircularProgressPullToRefresh-Prefix.pch.pch36"A7304407-F9E4-4C01-8FEF-FA0C48CB752A-
+bD7DDD22E-D318-4632-BF18-0295506C04CB
+
+CProcessPCH /Users/Albert/Library/Developer/Xcode/DerivedData/UzysCircularProgressPullToRefresh-ejqsichtqgytpxhiplmuehprpvfh/Index/PrecompiledHeaders/UzysCircularProgressPullToRefresh-Prefix-dqcbqcstfaazxlbzqrasaabxrfby_ast/UzysCircularProgressPullToRefresh-Prefix.pch.pch UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CTouch /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Build/Products/Debug-iphonesimulator/UzysCircularProgressPullToRefresh.app
+r0
+
