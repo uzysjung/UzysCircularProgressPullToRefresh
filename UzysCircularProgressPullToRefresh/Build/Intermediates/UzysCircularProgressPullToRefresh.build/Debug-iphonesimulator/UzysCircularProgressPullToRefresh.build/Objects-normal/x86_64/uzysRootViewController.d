@@ -1,0 +1,5 @@
+dependencies: \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.m \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/uzysRootViewController.h \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.h \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h

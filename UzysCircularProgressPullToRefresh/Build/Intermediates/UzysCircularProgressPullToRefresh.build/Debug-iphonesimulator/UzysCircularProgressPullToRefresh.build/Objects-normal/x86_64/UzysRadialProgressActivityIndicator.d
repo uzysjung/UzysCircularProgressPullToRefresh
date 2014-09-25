@@ -1,0 +1,4 @@
+dependencies: \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.m \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UzysRadialProgressActivityIndicator.h \
+  /Users/Albert/Github\ Projekte/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/UzysCircularProgressPullToRefresh/Library/UIScrollView+UzysCircularProgressPullToRefresh.h
