@@ -13,6 +13,11 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *pData;
 @end
+#define IS_IOS7 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1 && floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1)
+#define IS_IOS8  ([[[UIDevice currentDevice] systemVersion] compare:@"8" options:NSNumericSearch] != NSOrderedAscending)
+#define IS_IPHONE6PLUS ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [[UIScreen mainScreen] nativeScale] == 3.0f)
+
+
 #define CELLIDENTIFIER @"CELL"
 @implementation uzysRootViewController
 
@@ -30,11 +35,16 @@
 	// Do any additional setup after loading the view.
     [self setupDataSource];
     self.view.backgroundColor = [UIColor lightGrayColor];
+    if(IS_IOS7 || IS_IOS8)
+        self.automaticallyAdjustsScrollViewInsets = YES;
     self.title = @"UzysCircularProgressPullToRefresh";
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELLIDENTIFIER];
     [self.view addSubview:self.tableView];
 }
@@ -47,13 +57,23 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    __weak typeof(self) weakSelf =self;
-
+     __weak typeof(self) weakSelf =self;
     //Because of self.automaticallyAdjustsScrollViewInsets you must add code below in viewWillApper
     [_tableView addPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
 
+    // If you did not change scrollview inset, you don't need code below.
+    if(IS_IOS7)
+        [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52];
+    else if(IS_IOS8)
+    {
+        CGFloat landscapeTopInset = 32.0;
+        if(IS_IPHONE6PLUS)
+            landscapeTopInset = 44.0;
+        [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:landscapeTopInset];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -70,6 +90,7 @@
     [self.pData addObject:@"1"];
     [self.pData addObject:@"2"];
     [self.pData addObject:@"3"];
+    [self.pData addObject:@"4"];
 
     for(int i=0; i<20; i++)
         [self.pData addObject:[NSDate dateWithTimeIntervalSinceNow:-(i*100)]];
@@ -78,7 +99,7 @@
 - (void)insertRowAtTop {
     __weak typeof(self) weakSelf = self;
     
-    int64_t delayInSeconds = 1.2;
+    int64_t delayInSeconds = 1.8;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [weakSelf.tableView beginUpdates];
@@ -127,6 +148,12 @@
         cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.text = @"Changing borderColor";
     }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] &&[[self.pData objectAtIndex:indexPath.row] isEqualToString:@"4"])
+    {
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.text = @"Changing Threshold";
+    }
     else
     {
         NSDate *date = [self.pData objectAtIndex:indexPath.row];
@@ -158,7 +185,12 @@
     {
         [self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
     }
+    else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"4"])
+    {
+        [self.tableView.pullToRefreshView setProgressThreshold:25];
+    }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 @end

@@ -11,8 +11,8 @@
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
-#define PulltoRefreshThreshold 50.0
-
+#define PulltoRefreshThreshold 60.0
+#define StartPosition 5.0
 @interface UzysRadialProgressActivityIndicatorBackgroundLayer : CALayer
 
 @property (nonatomic,assign) CGFloat outlineWidth;
@@ -71,7 +71,7 @@
 
 - (id)init
 {
-    self = [super initWithFrame:CGRectMake(0, -PulltoRefreshThreshold, 25, 25)];
+    self = [super initWithFrame:CGRectMake(0, 0, 25, 25)];
     if(self) {
         [self _commonInit];
     }
@@ -79,7 +79,7 @@
 }
 - (id)initWithImage:(UIImage *)image
 {
-    self = [super initWithFrame:CGRectMake(0, -PulltoRefreshThreshold, 25, 25)];
+    self = [super initWithFrame:CGRectMake(0, 0, 25, 25)];
     if(self) {
         self.imageIcon =image;
         [self _commonInit];
@@ -95,6 +95,7 @@
     self.state = UZYSPullToRefreshStateNone;
     self.backgroundColor = [UIColor clearColor];
     self.activityIndicatorStyle = UIActivityIndicatorViewStyleGray;
+    self.progressThreshold = PulltoRefreshThreshold;
     //init actitvity indicator
     
     _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_activityIndicatorStyle];
@@ -170,7 +171,7 @@
 {
     [UIView animateWithDuration:0.3
                           delay:0
-                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState
+                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionLayoutSubviews
                      animations:^{
                          self.scrollView.contentInset = contentInset;
                      }
@@ -232,6 +233,11 @@
 {
     [super setCenter:center];
 }
+- (void)setProgressThreshold:(CGFloat)progressThreshold
+{
+    _progressThreshold = progressThreshold;
+    self.frame = CGRectMake(self.frame.origin.x, self.progressThreshold, self.frame.size.width, self.frame.size.height);
+}
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -254,7 +260,7 @@
 {
     static double prevProgress;
     CGFloat yOffset = contentOffset.y;
-    self.progress = ((yOffset+ self.originalTopInset)/-PulltoRefreshThreshold);
+    self.progress = ((yOffset+ self.originalTopInset + StartPosition)/-self.progressThreshold);
     
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
     switch (_state) {
@@ -269,8 +275,8 @@
         }
         case UZYSPullToRefreshStateTriggering: //progress
         {
-                if(self.progress >= 1.0)
-                    self.state = UZYSPullToRefreshStateTriggered;
+            if(self.progress >= 1.0)
+                self.state = UZYSPullToRefreshStateTriggered;
         }
             break;
         case UZYSPullToRefreshStateTriggered: //fire actionhandler
@@ -282,10 +288,11 @@
         case UZYSPullToRefreshStateLoading: //wait until stopIndicatorAnimation
             break;
         case UZYSPullToRefreshStateCanFinish:
-            if(self.progress < 0.01 && self.progress > -0.01)
+            if(self.progress < 0.01 + ((CGFloat)StartPosition/-self.progressThreshold) && self.progress > -0.01 +((CGFloat)StartPosition/-self.progressThreshold))
             {
                 self.state = UZYSPullToRefreshStateNone;
             }
+
             break;
         default:
             break;
@@ -312,7 +319,7 @@
 -(void)actionStopState
 {
     self.state = UZYSPullToRefreshStateCanFinish;
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState animations:^{
         self.activityIndicatorView.transform = CGAffineTransformMakeScale(0.1, 0.1);
     } completion:^(BOOL finished) {
         self.activityIndicatorView.transform = CGAffineTransformIdentity;
@@ -328,7 +335,7 @@
 {
     self.state = UZYSPullToRefreshStateLoading;
     
-    [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction animations:^{
+    [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState animations:^{
         [self setLayerOpacity:0.0];
     } completion:^(BOOL finished) {
         [self setLayerHidden:YES];
@@ -374,8 +381,6 @@
 {
     _imageIcon = imageIcon;
     _imageLayer.contents = (id)_imageIcon.CGImage;
-    _imageLayer.frame = CGRectInset(self.bounds, self.borderWidth, self.borderWidth);
-
     [self setSize:_imageIcon.size];
 }
 - (void)setBorderWidth:(CGFloat)borderWidth
