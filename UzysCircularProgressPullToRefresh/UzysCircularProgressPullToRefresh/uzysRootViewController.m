@@ -59,7 +59,7 @@
     [super viewWillAppear:animated];
      __weak typeof(self) weakSelf =self;
     //Because of self.automaticallyAdjustsScrollViewInsets you must add code below in viewWillApper
-    [_tableView addPullToRefreshActionHandler:^{
+    [_tableView addUzysPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
 
@@ -80,7 +80,7 @@
 {
     [super viewDidAppear:animated];
     //manually triggered pulltorefresh
-    [_tableView triggerPullToRefresh];
+    [_tableView triggerUzysPullToRefresh];
 }
 
 #pragma mark UITableView DataManagement
@@ -108,7 +108,7 @@
         [weakSelf.tableView endUpdates];
 
         //Stop PullToRefresh Activity Animation
-        [weakSelf.tableView stopRefreshAnimation];
+        [weakSelf.tableView stopUzysRefreshAnimation];
     });
 }
 
@@ -171,23 +171,23 @@
 {
     if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"0"])
     {
-        [self.tableView.pullToRefreshView setSize:CGSizeMake(40, 40)];
+        [self.tableView.uzysPullToRefreshView setSize:CGSizeMake(40, 40)];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"1"])
     {
-        [self.tableView.pullToRefreshView setBorderWidth:4];
+        [self.tableView.uzysPullToRefreshView setBorderWidth:4];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"2"])
     {
-        [self.tableView.pullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
+        [self.tableView.uzysPullToRefreshView setImageIcon:[UIImage imageNamed:@"thunderbird"]];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"3"])
     {
-        [self.tableView.pullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
+        [self.tableView.uzysPullToRefreshView setBorderColor:[UIColor colorWithRed:75/255.0 green:131/255.0 blue:188/255.0 alpha:1.0]];
     }
     else if([[self.pData objectAtIndex:indexPath.row] isKindOfClass:[NSString class]] && [[self.pData objectAtIndex:indexPath.row] isEqualToString:@"4"])
     {
-        [self.tableView.pullToRefreshView setProgressThreshold:25];
+        [self.tableView.uzysPullToRefreshView setProgressThreshold:25];
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];

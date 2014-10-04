@@ -10,15 +10,15 @@
 #import "UzysRadialProgressActivityIndicator.h"
 
 @interface UIScrollView (UzysCircularProgressPullToRefresh)
-@property (nonatomic,assign) BOOL showPullToRefresh;
-@property (nonatomic,strong,readonly) UzysRadialProgressActivityIndicator *pullToRefreshView;
+@property (nonatomic,assign) BOOL showUzysPullToRefresh;
+@property (nonatomic,strong,readonly) UzysRadialProgressActivityIndicator *uzysPullToRefreshView;
 
-- (void)addPullToRefreshActionHandler:(actionHandler)handler;
-- (void)addPullToRefreshActionHandler:(actionHandler)handler portraitContentInsetTop:(CGFloat)pInsetTop landscapeInsetTop:(CGFloat)lInsetTop;
+- (void)addUzysPullToRefreshActionHandler:(actionHandler)handler;
+- (void)addUzysPullToRefreshActionHandler:(actionHandler)handler portraitContentInsetTop:(CGFloat)pInsetTop landscapeInsetTop:(CGFloat)lInsetTop;
 
 //For Orientation Changed
 - (void)addTopInsetInPortrait:(CGFloat)pInset TopInsetInLandscape:(CGFloat)lInset; // Should have called after addPullToRefreshActionHandler
 
-- (void)triggerPullToRefresh;
-- (void)stopRefreshAnimation;
+- (void)triggerUzysPullToRefresh;
+- (void)stopUzysRefreshAnimation;
 @end

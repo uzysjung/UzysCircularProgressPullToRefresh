@@ -19,18 +19,18 @@
 static char UIScrollViewPullToRefreshView;
 
 @implementation UIScrollView (UzysCircularProgressPullToRefresh)
-@dynamic pullToRefreshView, showPullToRefresh;
+@dynamic uzysPullToRefreshView, showUzysPullToRefresh;
 
-- (void)addPullToRefreshActionHandler:(actionHandler)handler
+- (void)addUzysPullToRefreshActionHandler:(actionHandler)handler
 {
-    if(self.pullToRefreshView == nil)
+    if(self.uzysPullToRefreshView == nil)
     {
-        [self addPullToRefreshActionHandler:handler portraitContentInsetTop:CGFLOAT_MAX landscapeInsetTop:CGFLOAT_MAX];
+        [self addUzysPullToRefreshActionHandler:handler portraitContentInsetTop:CGFLOAT_MAX landscapeInsetTop:CGFLOAT_MAX];
     }
 }
-- (void)addPullToRefreshActionHandler:(actionHandler)handler portraitContentInsetTop:(CGFloat)pInsetTop landscapeInsetTop:(CGFloat)lInsetTop
+- (void)addUzysPullToRefreshActionHandler:(actionHandler)handler portraitContentInsetTop:(CGFloat)pInsetTop landscapeInsetTop:(CGFloat)lInsetTop
 {
-    if(self.pullToRefreshView == nil)
+    if(self.uzysPullToRefreshView == nil)
     {
         UzysRadialProgressActivityIndicator *view = [[UzysRadialProgressActivityIndicator alloc] initWithImage:[UIImage imageNamed:@"centerIcon"]];
         view.pullToRefreshHandler = handler;
@@ -71,70 +71,70 @@ static char UIScrollViewPullToRefreshView;
         
         [self addSubview:view];
         [self sendSubviewToBack:view];
-        self.pullToRefreshView = view;
-        self.showPullToRefresh = YES;
+        self.uzysPullToRefreshView = view;
+        self.showUzysPullToRefresh = YES;
     }
 }
 
-- (void)triggerPullToRefresh
+- (void)triggerUzysPullToRefresh
 {
-    [self.pullToRefreshView manuallyTriggered];
+    [self.uzysPullToRefreshView manuallyTriggered];
 }
-- (void)stopRefreshAnimation
+- (void)stopUzysRefreshAnimation
 {
-    [self.pullToRefreshView stopIndicatorAnimation];
+    [self.uzysPullToRefreshView stopIndicatorAnimation];
 }
 #pragma mark - property
 - (void)addTopInsetInPortrait:(CGFloat)pInset TopInsetInLandscape:(CGFloat)lInset
 {
-    self.pullToRefreshView.portraitTopInset = pInset;
-    self.pullToRefreshView.landscapeTopInset = lInset;
+    self.uzysPullToRefreshView.portraitTopInset = pInset;
+    self.uzysPullToRefreshView.landscapeTopInset = lInset;
 }
-- (void)setPullToRefreshView:(UzysRadialProgressActivityIndicator *)pullToRefreshView
+- (void)setUzysPullToRefreshView:(UzysRadialProgressActivityIndicator *)pullToRefreshView
 {
     [self willChangeValueForKey:@"UzysRadialProgressActivityIndicator"];
     objc_setAssociatedObject(self, &UIScrollViewPullToRefreshView, pullToRefreshView, OBJC_ASSOCIATION_ASSIGN);
     [self didChangeValueForKey:@"UzysRadialProgressActivityIndicator"];
 }
-- (UzysRadialProgressActivityIndicator *)pullToRefreshView
+- (UzysRadialProgressActivityIndicator *)uzysPullToRefreshView
 {
     return objc_getAssociatedObject(self, &UIScrollViewPullToRefreshView);
 }
 
-- (void)setShowPullToRefresh:(BOOL)showPullToRefresh {
-    self.pullToRefreshView.hidden = !showPullToRefresh;
+- (void)setShowUzysPullToRefresh:(BOOL)showPullToRefresh {
+    self.uzysPullToRefreshView.hidden = !showPullToRefresh;
     
     if(showPullToRefresh)
     {
-        if(!self.pullToRefreshView.isObserving)
+        if(!self.uzysPullToRefreshView.isObserving)
         {
-            [self addObserver:self.pullToRefreshView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-            [self addObserver:self.pullToRefreshView forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
-            [self addObserver:self.pullToRefreshView forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+            [self addObserver:self.uzysPullToRefreshView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+            [self addObserver:self.uzysPullToRefreshView forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+            [self addObserver:self.uzysPullToRefreshView forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
             [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
 
-            self.pullToRefreshView.isObserving = YES;
+            self.uzysPullToRefreshView.isObserving = YES;
         }
     }
     else
     {
-        if(self.pullToRefreshView.isObserving)
+        if(self.uzysPullToRefreshView.isObserving)
         {
-            [self removeObserver:self.pullToRefreshView forKeyPath:@"contentOffset"];
-            [self removeObserver:self.pullToRefreshView forKeyPath:@"contentSize"];
-            [self removeObserver:self.pullToRefreshView forKeyPath:@"frame"];
+            [self removeObserver:self.uzysPullToRefreshView forKeyPath:@"contentOffset"];
+            [self removeObserver:self.uzysPullToRefreshView forKeyPath:@"contentSize"];
+            [self removeObserver:self.uzysPullToRefreshView forKeyPath:@"frame"];
             [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
             [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
 
-            self.pullToRefreshView.isObserving = NO;
+            self.uzysPullToRefreshView.isObserving = NO;
         }
     }
 }
 
-- (BOOL)showPullToRefresh
+- (BOOL)showUzysPullToRefresh
 {
-    return !self.pullToRefreshView.hidden;
+    return !self.uzysPullToRefreshView.hidden;
 }
 
 - (void) orientationChanged:(NSNotification *)note
@@ -143,15 +143,15 @@ static char UIScrollViewPullToRefreshView;
     dispatch_async(dispatch_get_main_queue(), ^{
         if(UIDeviceOrientationIsLandscape(device.orientation))
         {
-            if(cNotEqualFloats( self.pullToRefreshView.landscapeTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
-                self.pullToRefreshView.originalTopInset = self.pullToRefreshView.landscapeTopInset;
+            if(cNotEqualFloats( self.uzysPullToRefreshView.landscapeTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
+                self.uzysPullToRefreshView.originalTopInset = self.uzysPullToRefreshView.landscapeTopInset;
         }
         else
         {
-            if(cNotEqualFloats( self.pullToRefreshView.portraitTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
-                self.pullToRefreshView.originalTopInset = self.pullToRefreshView.portraitTopInset;
+            if(cNotEqualFloats( self.uzysPullToRefreshView.portraitTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
+                self.uzysPullToRefreshView.originalTopInset = self.uzysPullToRefreshView.portraitTopInset;
         }
-        [self.pullToRefreshView setSize:self.pullToRefreshView.frame.size];
+        [self.uzysPullToRefreshView setSize:self.uzysPullToRefreshView.frame.size];
      });
 }
 
