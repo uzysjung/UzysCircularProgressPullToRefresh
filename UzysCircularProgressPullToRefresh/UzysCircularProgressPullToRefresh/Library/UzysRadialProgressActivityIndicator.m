@@ -11,6 +11,11 @@
 #define DEGREES_TO_RADIANS(x) (x)/180.0*M_PI
 #define RADIANS_TO_DEGREES(x) (x)/M_PI*180.0
 
+#define cDefaultFloatComparisonEpsilon    0.001
+#define cEqualFloats(f1, f2, epsilon)    ( fabs( (f1) - (f2) ) < epsilon )
+#define cNotEqualFloats(f1, f2, epsilon)    ( !cEqualFloats(f1, f2, epsilon) )
+
+
 #define PulltoRefreshThreshold 60.0
 #define StartPosition 5.0
 @interface UzysRadialProgressActivityIndicatorBackgroundLayer : CALayer
@@ -152,32 +157,46 @@
 }
 
 #pragma mark - ScrollViewInset
-- (void)setupScrollViewContentInsetForLoadingIndicator:(actionHandler)handler
+- (void)setupScrollViewContentInsetForLoadingIndicator:(actionHandler)handler animation:(BOOL)animation
 {
-    CGFloat offset = MAX(self.scrollView.contentOffset.y * -1, 0);
+    
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
-    currentInsets.top = MIN(offset, self.originalTopInset + self.bounds.size.height + 20.0);
-    [self setScrollViewContentInset:currentInsets handler:handler];
+    float idealOffset = self.originalTopInset + self.bounds.size.height + 20.0;
+    currentInsets.top = idealOffset;
+    
+    [self setScrollViewContentInset:currentInsets handler:handler animation:animation];
 }
-- (void)resetScrollViewContentInset:(actionHandler)handler
+- (void)resetScrollViewContentInset:(actionHandler)handler animation:(BOOL)animation
 {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     currentInsets.top = self.originalTopInset;
-    [self setScrollViewContentInset:currentInsets handler:handler];
+    [self setScrollViewContentInset:currentInsets handler:handler animation:animation];
 }
-- (void)setScrollViewContentInset:(UIEdgeInsets)contentInset handler:(actionHandler)handler
+- (void)setScrollViewContentInset:(UIEdgeInsets)contentInset handler:(actionHandler)handler animation:(BOOL)animation
 {
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionLayoutSubviews
-                     animations:^{
-                         self.scrollView.contentInset = contentInset;
-                     }
-                     completion:^(BOOL finished) {
-                         if(handler)
-                             handler();
-                     }];
+    if(animation)
+    {
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             self.scrollView.contentInset = contentInset;
+                         }
+                         completion:^(BOOL finished) {
+                             if(handler)
+                                 handler();
+                         }];
+    }
+    else
+    {
+        self.scrollView.contentInset = contentInset;
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -1*contentInset.top);
+        
+        if(handler)
+            handler();
+    }
 }
+
 #pragma mark - property
 - (void)setProgress:(double)progress
 {
@@ -259,8 +278,8 @@
     static double prevProgress;
     CGFloat yOffset = contentOffset.y;
     self.progress = ((yOffset+ self.originalTopInset + StartPosition)/-self.progressThreshold);
-    
     self.center = CGPointMake(self.center.x, (contentOffset.y+ self.originalTopInset)/2);
+    
     switch (_state) {
         case UZYSPullToRefreshStateStopped: //finish
             break;
@@ -325,7 +344,7 @@
         [self resetScrollViewContentInset:^{
             [self setLayerHidden:NO];
             [self setLayerOpacity:1.0];
-        }];
+        } animation:YES];
 
     }];
 }
@@ -340,12 +359,40 @@
     }];
 
     [self.activityIndicatorView startAnimating];
-    [self setupScrollViewContentInsetForLoadingIndicator:nil];
+    [self setupScrollViewContentInsetForLoadingIndicator:nil animation:YES];
     if(self.pullToRefreshHandler)
         self.pullToRefreshHandler();
 }
 
 #pragma mark - public method
+- (void)orientationChange:(UIDeviceOrientation)orientation {
+    if(UIDeviceOrientationIsLandscape(orientation))
+    {
+        if(cNotEqualFloats( self.landscapeTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
+            self.originalTopInset = self.landscapeTopInset;
+    }
+    else
+    {
+        if(cNotEqualFloats( self.portraitTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
+            self.originalTopInset = self.portraitTopInset;
+    }
+    [self setSize:_imageIcon.size];
+//    self.frame = CGRectMake((self.scrollView.bounds.size.width - self.bounds.size.width)/2, self.frame.origin.y, self.bounds.size.width, self.bounds.size.height);
+    if(self.state == UZYSPullToRefreshStateLoading)
+    {
+        [self setupScrollViewContentInsetForLoadingIndicator:^{
+        } animation:NO];
+    }
+    else
+    {
+        [self resetScrollViewContentInset:^{
+        } animation:NO];
+    }
+    self.alpha = 1.0f;
+    
+    
+}
+
 - (void)stopIndicatorAnimation
 {
     [self actionStopState];

@@ -47,22 +47,13 @@
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELLIDENTIFIER];
     [self.view addSubview:self.tableView];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-     __weak typeof(self) weakSelf =self;
+    
+    __weak typeof(self) weakSelf =self;
     //Because of self.automaticallyAdjustsScrollViewInsets you must add code below in viewWillApper
     [_tableView addPullToRefreshActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
-
+    
     // If you did not change scrollview inset, you don't need code below.
     if(IS_IOS7)
         [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:52];
@@ -73,6 +64,17 @@
             landscapeTopInset = 44.0;
         [self.tableView addTopInsetInPortrait:64 TopInsetInLandscape:landscapeTopInset];
     }
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
     
 }
 
@@ -99,7 +101,7 @@
 - (void)insertRowAtTop {
     __weak typeof(self) weakSelf = self;
     
-    int64_t delayInSeconds = 1.8;
+    int64_t delayInSeconds = 2.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [weakSelf.tableView beginUpdates];

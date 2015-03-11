@@ -54,6 +54,7 @@ static char UIScrollViewPullToRefreshView;
                 if(cEqualFloats(self.contentInset.top, 0.00, cDefaultFloatComparisonEpsilon) &&cEqualFloats(self.frame.origin.y, 0.0, cDefaultFloatComparisonEpsilon))
                 {
                     view.portraitTopInset = 64.0;
+                    view.originalTopInset = 64.0;
                     
                     if(IS_IPHONE6PLUS)
                         view.landscapeTopInset = 44.0;
@@ -141,17 +142,7 @@ static char UIScrollViewPullToRefreshView;
 {
     UIDevice * device = note.object;
     dispatch_async(dispatch_get_main_queue(), ^{
-        if(UIDeviceOrientationIsLandscape(device.orientation))
-        {
-            if(cNotEqualFloats( self.pullToRefreshView.landscapeTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
-                self.pullToRefreshView.originalTopInset = self.pullToRefreshView.landscapeTopInset;
-        }
-        else
-        {
-            if(cNotEqualFloats( self.pullToRefreshView.portraitTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
-                self.pullToRefreshView.originalTopInset = self.pullToRefreshView.portraitTopInset;
-        }
-        [self.pullToRefreshView setSize:self.pullToRefreshView.frame.size];
+        [self.pullToRefreshView orientationChange:device.orientation];
      });
 }
 

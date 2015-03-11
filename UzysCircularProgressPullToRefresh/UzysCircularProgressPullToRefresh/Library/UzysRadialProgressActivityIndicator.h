@@ -40,4 +40,7 @@ typedef NS_ENUM(NSUInteger, UZYSPullToRefreshState) {
 
 - (id)initWithImage:(UIImage *)image;
 - (void)setSize:(CGSize) size;
+
+- (void)orientationChange:(UIDeviceOrientation)orientation;
+
 @end
