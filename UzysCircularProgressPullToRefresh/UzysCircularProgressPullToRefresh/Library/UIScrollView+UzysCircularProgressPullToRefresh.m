@@ -90,6 +90,17 @@ static char UIScrollViewPullToRefreshView;
 {
     self.pullToRefreshView.portraitTopInset = pInset;
     self.pullToRefreshView.landscapeTopInset = lInset;
+    
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if(orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)
+    {
+        self.pullToRefreshView.originalTopInset = self.pullToRefreshView.portraitTopInset;
+    }
+    else
+    {
+        self.pullToRefreshView.originalTopInset = self.pullToRefreshView.landscapeTopInset;
+    }
+    
 }
 - (void)setPullToRefreshView:(UzysRadialProgressActivityIndicator *)pullToRefreshView
 {

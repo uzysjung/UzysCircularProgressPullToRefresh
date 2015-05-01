@@ -174,6 +174,7 @@
 }
 - (void)setScrollViewContentInset:(UIEdgeInsets)contentInset handler:(actionHandler)handler animation:(BOOL)animation
 {
+    NSLog(@"offset %f",self.scrollView.contentOffset.y);
     if(animation)
     {
         [UIView animateWithDuration:0.3
@@ -181,6 +182,9 @@
                             options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
                              self.scrollView.contentInset = contentInset;
+                             if(self.state == UZYSPullToRefreshStateLoading && self.scrollView.contentOffset.y <10) {
+                                 self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -1*contentInset.top);
+                             }
                          }
                          completion:^(BOOL finished) {
                              if(handler)
@@ -190,7 +194,9 @@
     else
     {
         self.scrollView.contentInset = contentInset;
-        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -1*contentInset.top);
+        if(self.state == UZYSPullToRefreshStateLoading && self.scrollView.contentOffset.y <10) {
+            self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, -1*contentInset.top);
+        }
         
         if(handler)
             handler();
@@ -366,6 +372,14 @@
 
 #pragma mark - public method
 - (void)orientationChange:(UIDeviceOrientation)orientation {
+    
+    UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+    UIInterfaceOrientation statusBarOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    if((NSInteger)deviceOrientation !=(NSInteger)statusBarOrientation){
+        return;
+    }
+    
     if(UIDeviceOrientationIsLandscape(orientation))
     {
         if(cNotEqualFloats( self.landscapeTopInset , 0.0 , cDefaultFloatComparisonEpsilon))
