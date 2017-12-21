@@ -343,7 +343,7 @@ static int KVOUZYSRadialProgressActivityIndicatorObserving;
 
 - (void)updateFrameWithSize:(CGSize)newSize
 {
-	CGRect newFrame = CGRectMake(self.scrollView.bounds.size.width / 2.0 - newSize.width / 2.0 + self.positionOffset.x, (self.scrollView.contentOffset.y + self.currentTopInset) / 2.0 - newSize.height / 2.0 + self.positionOffset.y, newSize.width, newSize.height);
+	CGRect newFrame = CGRectMake(self.scrollView.bounds.size.width / 2.0 - newSize.width / 2.0 + self.scrollView.contentOffset.x + self.positionOffset.x, (self.scrollView.contentOffset.y + self.currentTopInset) / 2.0 - newSize.height / 2.0 + self.positionOffset.y, newSize.width, newSize.height);
 	
 	self.frame = newFrame;
 }
