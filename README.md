@@ -15,7 +15,7 @@ Give Pinterest Like PullToRefresh to any UIScrollView with just simple code
 * Support Orientation change.
 
 ## Installation
-Copy over the files libary folder to your project folder
+Copy over the files library folder to your project folder
 
 ## Usage
 ###Import header.
